@@ -12,7 +12,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -43,20 +43,25 @@
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./portfolio.html">Portfolio</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">   
+                                <li class="active"><a href="./index.html" data-lang-key="nav_home">Home</a></li>
+                                <li><a href="./portfolio.html" data-lang-key="nav_portfolio">Portfolio</a></li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul class="dropdown">
                                         <li><a href="./portfolio.html">Portfolio</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./contact.html" data-lang-key="nav_contact">Contact</a></li>
                             </ul>
                         </nav>
                         <div class="header__nav__social">
                             <a href="https://github.com/WestMinsu"><i class="fa fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/westminsu"><i class="fa fa-linkedin"></i></a>
                             <a href="https://www.youtube.com/@WestMinsu"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                        <div class="language-switcher">
+                            <button id="lang-ko">한국어</button>
+                            <button id="lang-en">English</button>
                         </div>
                     </div>
                 </div>
@@ -65,7 +70,6 @@
         </div>
     </header>
     <!-- Header End -->
-
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -76,7 +80,7 @@
                             <div class="hero__text">
                                 <span>Game Programmer</span>
                                 <h2>Minsu Seo</h2>
-                                <a href="portfolio.html" class="primary-btn">See my portfolio</a>
+                                <a href="portfolio.html" class="primary-btn" data-lang-key="hero_button">See my portfolio</a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +88,6 @@
             </div>
     </section>
     <!-- Hero Section End -->
-
     <!-- Services Section Begin -->
     <section class="services spad">
         <div class="container">
@@ -92,10 +95,10 @@
                 <div class="col-lg-4">
                     <div class="services__title">
                         <div class="section-title">
-                            <h2>My passion</h2>
+                            <h2 data-lang-key="passion_title">My passion</h2>
                         </div>
-                        <p>I believe games are a powerful medium, capable of delivering unparalleled emotion and engagement that rival any form of entertainment. This conviction fuels my passion for graphics rendering technologies. While I enjoy casual games, my true focus lies in harnessing cutting-edge rendering techniques to craft visually stunning games with immersive environments and lifelike characters. My goal is to create titles that captivate players, blending brilliant visual effects with unforgettable experiences that leave a lasting impact.</p>
-                        
+                        <p data-lang-key="passion_text">I believe games are a powerful medium, capable of delivering unparalleled emotion and engagement that rival any form of entertainment. This conviction fuels my passion for graphics rendering technologies. While I enjoy casual games, my true focus lies in harnessing cutting-edge rendering techniques to craft visually stunning games with immersive environments and lifelike characters. My goal is to create titles that captivate players, blending brilliant visual effects with unforgettable experiences that leave a lasting impact.</p>
+
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -105,9 +108,11 @@
                                 <div class="services__item__icon">
                                     <img src="img/icons/si-1.png" alt="">
                                 </div>
-                                <h4>Motion graphics</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4 data-lang-key="service1_title">Motion graphics</h4>
+                                <p data-lang-key="service1_text">
+                                    Whether you’re halfway through the editing process, or you haven’t even started, our
+                                    post production services can put the finishing touches.
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -115,9 +120,11 @@
                                 <div class="services__item__icon">
                                     <img src="img/icons/si-2.png" alt="">
                                 </div>
-                                <h4>Scriptwriting and editing</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4 data-lang-key="service2_title">Scriptwriting and editing</h4>
+                                <p data-lang-key="service2_text">
+                                    Whether you’re halfway through the editing process, or you haven’t even started, our
+                                    post production services can put the finishing touches.
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -125,9 +132,11 @@
                                 <div class="services__item__icon">
                                     <img src="img/icons/si-3.png" alt="">
                                 </div>
-                                <h4>Video distribution</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4 data-lang-key="service3_title">Video distribution</h4>
+                                <p data-lang-key="service3_text">
+                                    Whether you’re halfway through the editing process, or you haven’t even started, our
+                                    post production services can put the finishing touches.
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -135,9 +144,11 @@
                                 <div class="services__item__icon">
                                     <img src="img/icons/si-4.png" alt="">
                                 </div>
-                                <h4>Video hosting</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4 data-lang-key="service4_title">Video hosting</h4>
+                                <p data-lang-key="service4_text">
+                                    Whether you’re halfway through the editing process, or you haven’t even started, our
+                                    post production services can put the finishing touches.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -146,8 +157,6 @@
         </div>
     </section>
     <!-- Services Section End -->
-
-
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
@@ -171,12 +180,13 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="footer__copyright__text">Copyright &copy;
+                        <p class="footer__copyright__text">
+                            Copyright &copy;
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -185,7 +195,6 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
