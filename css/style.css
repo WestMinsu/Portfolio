@@ -338,17 +338,17 @@ ol {
     .header__nav__menu ul li {
         list-style: none;
         display: inline-block;
-        margin-right: 45px;
+        margin-right: 0px;
         position: relative;
     }
 
-        .header__nav__menu ul li.active a:after {
+        .header__nav__menu ul li.active a span:after {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
             transform: scale(1);
         }
 
-        .header__nav__menu ul li:hover a:after {
+        .header__nav__menu ul li:hover a span:after {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
             transform: scale(1);
@@ -403,24 +403,38 @@ ol {
             display: block;
             text-transform: uppercase;
             position: relative;
-            padding: 6px 0;
+            padding: 6px 22px;
         }
 
-            .header__nav__menu ul li a:after {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 2px;
-                background: #00bfe7;
-                content: "";
-                -webkit-transform: scale(0);
-                -ms-transform: scale(0);
-                transform: scale(0);
-                -webkit-transition: all, 0.3s;
-                -o-transition: all, 0.3s;
-                transition: all, 0.3s;
+        /* a 태그는 클릭 영역(padding)만 담당 */
+        .header__nav__menu ul li a {
+            font-size: 15px;
+            font-family: "Play", sans-serif;
+            color: #ffffff;
+            display: block;
+            text-transform: uppercase;
+            position: relative;
+            padding: 6px 22px; /* 클릭 영역 확보 */
+        }
+
+            /* span 태그는 텍스트와 밑줄을 담당 */
+            .header__nav__menu ul li a span {
+                position: relative; /* 밑줄 위치의 기준점이 됨 */
+                display: inline-block; /* 아이콘/텍스트 크기에 맞게 조절 */
             }
+
+                /* 새로운 밑줄 스타일 */
+                .header__nav__menu ul li a span:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -6px; /* 텍스트와의 간격 */
+                    width: 100%; /* span(텍스트)의 너비에만 100% 적용됨 */
+                    height: 2px;
+                    background: #00bfe7;
+                    transform: scale(0);
+                    transition: all, 0.3s;
+                }
 
 .header__nav__social {
     display: inline-block;
@@ -2307,7 +2321,7 @@ ol {
         padding: 30px 45px 35px 35px;
     }
 }
-/* Small Device = 320px */
+
 @media only screen and (max-width: 479px) {
     .hero__text h2 {
         font-size: 30px;
@@ -2346,25 +2360,182 @@ ol {
     .blog__details__quote {
         padding: 30px 40px 35px 35px;
     }
+}
 
+.section-title.center-title {
+    text-align: center;
+}
 
-    .language-switcher {
-        display: inline-block;
-        margin-left: 20px;
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    background-color: #e9ecef; 
+    border-radius: 8px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ced4da;
+}
+
+.video-placeholder span {
+    font-size: 1.25rem; 
+    color: #868e96; 
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
-        .language-switcher button {
-            background: none;
-            border: 1px solid var(--white-color);
-            color: var(--white-color);
-            padding: 5px 10px;
-            margin-left: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.portfolio__item {
+    position: relative;
+    overflow: hidden;
+}
 
-            .language-switcher button:hover {
-                background: var(--secondary-color);
-                border-color: var(--secondary-color);
-            }
+.portfolio__item__text {
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio__item:hover .portfolio__item__text {
+    opacity: 0;
+}
+
+.portfolio__item__description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 20px;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.portfolio__item:hover .portfolio__item__description {
+    bottom: 0;
+}
+
+.portfolio__item__description h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.portfolio__item__description p {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* =================================== */
+/* One Page Scroll Offset */
+/* =================================== */
+section {
+    scroll-margin-top: 90px;
+}
+
+.header__nav__menu ul li.lang-menu {
+    position: relative; /* 구분선 위치의 기준점 */
+    margin-right: 0;
+    padding-right: 8px; /* KO와 | 사이 간격 */
+}
+
+/* 'EN' 메뉴에만 왼쪽 간격 추가 */
+.header__nav__menu ul li#lang-menu-en {
+    padding-left: 8px; /* |와 EN 사이 간격 */
+}
+
+/* KO, EN 링크의 폰트 크기 */
+.header__nav__menu ul li.lang-menu a {
+    font-size: 12px;
+    padding: 6px 4px;
+}
+
+/* 'EN' 메뉴 왼쪽에만 구분선 '|' 생성 */
+.header__nav__menu ul li#lang-menu-en::before {
+    content: "|";
+    position: absolute;
+    left: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: normal;
+    font-size: 10px;
+}
+
+/* =================================== */
+/* Clickable Portfolio Thumbnail Style */
+/* =================================== */
+.portfolio__item__video {
+    cursor: pointer;
+}
+
+/* =================================== */
+/* Portfolio Detail Popup Styles */
+/* =================================== */
+
+.white-popup-block {
+    background: #1e1e1e;
+    padding: 30px 40px;
+    text-align: left;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+    .white-popup-block h2 {
+        color: #ffffff;
+        font-family: "Play", sans-serif;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    .white-popup-block p {
+        color: #adadad;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .white-popup-block h4 {
+        color: #ffffff; /* 팝업창 안의 h4 태그만 흰색으로 변경 */
+    }
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.mfp-hide {
+    display: none !important;
+}
+
+.portfolio__item__video {
+    cursor: pointer;
 }

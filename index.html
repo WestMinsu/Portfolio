@@ -7,14 +7,11 @@
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Videograph | Template</title>
+    <title>Minsu Seo's Portfolio</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -24,131 +21,45 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
-<body>
-    <!-- Page Preloder -->
+<body data-spy="scroll" data-target=".header__nav__menu" data-offset="100">
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html" data-lang-key="nav_home">Home</a></li>
-                                <li><a href="./portfolio.html" data-lang-key="nav_portfolio">Portfolio</a></li>
-                                <li>
-                                    <a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="./portfolio.html">Portfolio</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="./contact.html" data-lang-key="nav_contact">Contact</a></li>
+                                <li class="nav-item active"><a href="#home"><span data-lang-key="nav_home">Home</span></a></li>
+                                <li class="nav-item"><a href="#portfolio"><span data-lang-key="nav_portfolio">Portfolio</span></a></li>
+                                <li><a href="https://github.com/WestMinsu" target="_blank"><span><i class="fa fa-github"></i></span></a></li>
+                                <li><a href="https://www.linkedin.com/in/westminsu" target="_blank"><span><i class="fa fa-linkedin"></i></span></a></li>
+                                <li><a href="https://www.youtube.com/@WestMinsu" target="_blank"><span><i class="fa fa-youtube-play"></i></span></a></li>
+                                <li class="lang-menu active" id="lang-menu-ko"><a href="#"><span>KO</span></a></li>
+                                <li class="lang-menu" id="lang-menu-en"><a href="#"><span>EN</span></a></li>
                             </ul>
                         </nav>
-                        <div class="header__nav__social">
-                            <a href="https://github.com/WestMinsu"><i class="fa fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/westminsu"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://www.youtube.com/@WestMinsu"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                        <div class="language-switcher">
-                            <button id="lang-ko">한국어</button>
-                            <button id="lang-en">English</button>
-                        </div>
                     </div>
                 </div>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <!-- Header End -->
-    <!-- Hero Section Begin -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero__slider owl-carousel">
             <div class="hero__item set-bg" data-setbg="img/controller.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>Game Programmer</span>
+                                <span data-lang-key="hero_role">Game Programmer</span>
                                 <h2>Minsu Seo</h2>
-                                <a href="portfolio.html" class="primary-btn" data-lang-key="hero_button">See my portfolio</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- Hero Section End -->
-    <!-- Services Section Begin -->
-    <section class="services spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="services__title">
-                        <div class="section-title">
-                            <h2 data-lang-key="passion_title">My passion</h2>
-                        </div>
-                        <p data-lang-key="passion_text">I believe games are a powerful medium, capable of delivering unparalleled emotion and engagement that rival any form of entertainment. This conviction fuels my passion for graphics rendering technologies. While I enjoy casual games, my true focus lies in harnessing cutting-edge rendering techniques to craft visually stunning games with immersive environments and lifelike characters. My goal is to create titles that captivate players, blending brilliant visual effects with unforgettable experiences that leave a lasting impact.</p>
-
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="img/icons/si-1.png" alt="">
-                                </div>
-                                <h4 data-lang-key="service1_title">Motion graphics</h4>
-                                <p data-lang-key="service1_text">
-                                    Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="img/icons/si-2.png" alt="">
-                                </div>
-                                <h4 data-lang-key="service2_title">Scriptwriting and editing</h4>
-                                <p data-lang-key="service2_text">
-                                    Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="img/icons/si-3.png" alt="">
-                                </div>
-                                <h4 data-lang-key="service3_title">Video distribution</h4>
-                                <p data-lang-key="service3_text">
-                                    Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="img/icons/si-4.png" alt="">
-                                </div>
-                                <h4 data-lang-key="service4_title">Video hosting</h4>
-                                <p data-lang-key="service4_text">
-                                    Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.
-                                </p>
+                                <a href="#portfolio" class="primary-btn scroll-btn" data-lang-key="hero_button">See my portfolio</a>
                             </div>
                         </div>
                     </div>
@@ -156,18 +67,172 @@
             </div>
         </div>
     </section>
-    <!-- Services Section End -->
-    <!-- Footer Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="services__title">
+                        <div class="section-title">
+                            <h2 data-lang-key="passion_title">Beyond the game</h2>
+                        </div>
+                        <p data-lang-key="passion_text">I believe games are a powerful medium, capable of delivering unparalleled emotion and engagement that rival any form of entertainment. This conviction fuels my passion for graphics rendering technologies. While I enjoy casual games, my true focus lies in harnessing cutting-edge rendering techniques to craft visually stunning games with immersive environments and lifelike characters. My goal is to create titles that captivate players, blending brilliant visual effects with unforgettable experiences that leave a lasting impact.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="section-title center-title">
+                        <h2 data-lang-key="video_title">Featured Project</h2>
+                        <p data-lang-key="video_subtitle" style="color: #4d4d4d; text-transform: none; margin-top: 10px;">A summary of my work and skills.</p>
+                    </div>
+                    <div class="video-placeholder">
+                        <span data-lang-key="video_placeholder_text">Video Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio spad" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title center-title">
+                        <h2 data-lang-key="portfolio_page_title">My Portfolio</h2>
+                    </div>
+                    <ul class="portfolio__filter">
+                        <li class="active" data-filter="*" data-lang-key="filter_all">All</li>
+                        <li data-filter=".unreal" data-lang-key="filter_unreal">Unreal</li>
+                        <li data-filter=".cpp" data-lang-key="filter_cpp">C++</li>
+                        <li data-filter=".c" data-lang-key="filter_c">C</li>
+                        <li data-filter=".unity" data-lang-key="filter_unity">Unity</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row portfolio__gallery">
+                <div class="col-lg-4 col-md-6 col-sm-6 mix unreal">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/language_world.png">
+                            <a href="#popup-lw" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="portfolio__item__description">
+                            <h4 data-lang-key="p_lw_title">Language World</h4>
+                            <p data-lang-key="p_lw_desc">
+                                언어 학습을 게임처럼 즐길 수 있도록 설계된 메타버스 프로젝트입니다. Unreal Engine의 블루프린트를 사용하여 핵심 로직을 구현했습니다.
+                            </p>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4 data-lang-key="p_lw_title">Language World</h4>
+                            <ul>
+                                <li data-lang-key="p_lw_tag1">Unreal Engine</li>
+                                <li data-lang-key="p_lw_tag2">Blueprint</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 mix cpp">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arcane_edge.png">
+                            <a href="#popup-ae" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="portfolio__item__description">
+                            <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
+                            <p data-lang-key="p_ae_desc">
+                                C++을 기반으로 제작된 2D 액션 게임입니다. 자체 게임 엔진의 기초를 다지며 객체 지향 프로그래밍의 원칙을 적용했습니다.
+                            </p>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
+                            <span data-lang-key="p_ae_tag1">C++ Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 mix c">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/guardian_princess.png">
+                            <a href="#popup-gp" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="portfolio__item__description">
+                            <h4 data-lang-key="p_gp_title">Guardian Princess</h4>
+                            <p data-lang-key="p_gp_desc">
+                                C언어 콘솔 환경에서 실행되는 텍스트 기반의 RPG 게임입니다. 기본적인 게임 루프와 데이터 구조를 학습했습니다.
+                            </p>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4 data-lang-key="p_gp_title">Guardian Princess</h4>
+                            <ul>
+                                <li data-lang-key="p_gp_tag1">C Language</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 mix unity">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/infinite_dungeon.png">
+                            <a href="#popup-id" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="portfolio__item__description">
+                            <h4 data-lang-key="p_id_title">Infinite Dungeon</h4>
+                            <p data-lang-key="p_id_desc">
+                                Unity와 C#을 사용하여 만든 무한 생성형 던전 로그라이크 게임입니다. 절차적 레벨 생성 알고리즘을 구현했습니다.
+                            </p>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4 data-lang-key="p_id_title">Infinite Dungeon</h4>
+                            <ul>
+                                <li data-lang-key="p_id_tag1">Unity</li>
+                                <li data-lang-key="p_id_tag2">C#</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div id="popup-lw" class="mfp-hide white-popup-block">
+        <h2 data-lang-key="p_lw_title">Language World</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/mPajRakaYSo" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p data-lang-key="p_lw_detail_desc">
+            [Language World에 대한 자세한 설명을 여기에 작성합니다.]
+        </p>
+    </div>
+
+    <div id="popup-ae" class="mfp-hide white-popup-block">
+        <h2 data-lang-key="p_ae_title">Arcane Edge</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/zFD2J6oJhNU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p data-lang-key="p_ae_detail_desc">
+            [Arcane Edge에 대한 자세한 설명을 여기에 작성합니다.]
+        </p>
+    </div>
+
+    <div id="popup-gp" class="mfp-hide white-popup-block">
+        <h2 data-lang-key="p_gp_title">Guardian Princess</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/M8pW2XTbJZ8" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p data-lang-key="p_gp_detail_desc">
+            [Guardian Princess에 대한 자세한 설명을 여기에 작성합니다.]
+        </p>
+    </div>
+
+    <div id="popup-id" class="mfp-hide white-popup-block">
+        <h2 data-lang-key="p_id_title">Infinite Dungeon</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/Fj44CD9ayVc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p data-lang-key="p_id_detail_desc">
+            [Infinite Dungeon에 대한 자세한 설명을 여기에 작성합니다.]
+        </p>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-7 col-md-6">
                         <div class="footer__top__social">
                             <a href="https://github.com/WestMinsu"><i class="fa fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/westminsu"><i class="fa fa-linkedin"></i></a>
@@ -179,23 +244,15 @@
             <div class="footer__copyright">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="footer__copyright__text">
+                        <p class="footer__copyright__text" data-lang-key="copyright_text">
                             Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
-    <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
