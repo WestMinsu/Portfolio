@@ -134,9 +134,9 @@
         <a href="https://github.com/WestMinsu/CProcessingProject" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
     `,
 
-            p_id_desc: "Unity와 C#으로 개발한 쿼터뷰 3D 액션 로그라이크 게임입니다. Nav Mesh를 활용한 몬스터 AI와 다양한 공격 패턴을 구현했습니다.",
+            p_id_desc: "Unity와 C#으로 개발한 쿼터뷰 3D 액션 게임입니다. Nav Mesh를 활용한 몬스터 AI와 다양한 공격 패턴을 구현했습니다.",
             p_id_detail_desc: `
-        <p>Unity와 C#을 사용하여 개발한 쿼터뷰 3D 액션 로그라이크 게임입니다. 팀장 역할을 맡아 프로젝트를 이끌었으며, 특히 몬스터와 보스의 AI 로직 및 공격 패턴 구현에 중점을 두었습니다.</p>
+        <p>Unity와 C#을 사용하여 개발한 쿼터뷰 3D 액션 게임입니다. 팀장 역할을 맡아 프로젝트를 이끌었으며, 특히 몬스터와 보스의 AI 로직 및 공격 패턴 구현에 중점을 두었습니다.</p>
         <h4><strong>주요 역할 및 구현 내용:</strong></h4>
         <ul>
             <li><strong>몬스터 및 보스 AI:</strong> Nav Mesh를 활용하여 모든 적이 플레이어를 지능적으로 추적하고, 각기 다른 특성을 가진 공격 패턴(근접, 원거리, 돌진 등)을 구사하도록 설계했습니다.</li>
@@ -197,9 +197,9 @@
         <a href="https://github.com/WestMinsu/CProcessingProject" target="_blank" class="primary-btn">View Code on GitHub</a>
     `,
 
-            p_id_desc: "A quarter-view 3D action roguelike game developed with Unity and C#. Implemented monster AI using Nav Mesh and various attack patterns.",
+            p_id_desc: "A quarter-view 3D action game developed with Unity and C#. Implemented monster AI using Nav Mesh and various attack patterns.",
             p_id_detail_desc: `
-        <p>A quarter-view 3D action roguelike game developed using Unity and C#. As the team leader, I led the project and focused particularly on implementing the AI logic and attack patterns for monsters and bosses.</p>
+        <p>A quarter-view 3D action game developed using Unity and C#. As the team leader, I led the project and focused particularly on implementing the AI logic and attack patterns for monsters and bosses.</p>
         <h4><strong>Key Roles and Implementations:</strong></h4>
         <ul>
             <li><strong>Monster & Boss AI:</strong> Designed all enemies to intelligently track the player using Nav Mesh, equipped with unique attack patterns such as melee, ranged, and charge attacks.</li>
