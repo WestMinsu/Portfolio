@@ -2539,3 +2539,13 @@ section {
 .portfolio__item__video {
     cursor: pointer;
 }
+
+.services__title.text-center .section-title {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.services__title.text-center p {
+    font-size: 18px; 
+    line-height: 1.7;
+}

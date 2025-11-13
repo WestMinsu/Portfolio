@@ -93,9 +93,17 @@
             passion_title: "Beyond the game",
             passion_text: "게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 그래픽 렌더링 기술에 많은 관심을 가지고 있습니다. 캐주얼한 게임도 좋아하지만, 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고, 화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다. 플레이어들에게 잊지 못할 경험을 제공하는 게임을 만들고 싶습니다.",
             copyright_text: `Copyright © ${new Date().getFullYear()} All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>`,
-            video_title: "주요 프로젝트",
-            video_subtitle: "저의 작업과 기술을 요약한 영상입니다.",
-            video_placeholder_text: "영상 준비 중",
+
+            p_ap_desc: "fps",
+            p_ap_detail_desc: `
+        <p>팀원</p>
+        <h4><strong>주요 역할 및 구현 내용:</strong></h4>
+        <ul>
+            <li><strong>a:</strong> d.</li>
+            <li><strong>b:</strong> e.</li>
+            <li><strong>c:</strong> f.</li>
+        </ul>
+    `,
 
             p_lw_desc: "언리얼 엔진 기반의 언어 학습 메타버스로, 생성형 AI NPC와의 대화 및 멀티플레이 상호작용을 통해 몰입감 높은 학습 경험을 제공합니다.",
             p_lw_detail_desc: `
