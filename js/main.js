@@ -94,63 +94,58 @@
             passion_text: "게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 그래픽 렌더링 기술에 많은 관심을 가지고 있습니다. 캐주얼한 게임도 좋아하지만, 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고, 화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다. 플레이어들에게 잊지 못할 경험을 제공하는 게임을 만들고 싶습니다.",
             copyright_text: `Copyright © ${new Date().getFullYear()} All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>`,
 
-            p_ap_desc: "fps",
+            p_ap_desc: "언리얼 엔진 5를 사용하여 개발 중인 메카 소녀 FPS 게임입니다. 게임 시작 전 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.",
             p_ap_detail_desc: `
-        <p>팀원</p>
-        <h4><strong>주요 역할 및 구현 내용:</strong></h4>
+        <p>현재 개발 중인 근미래 한국 배경의 디스토피아 세계관을 가진 메카 소녀 FPS 게임입니다. 게임 시작 전 무기, 방어구, 장비 등으로 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치(가격)가 소모되며 이 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다. 2인 팀의 팀원으로 참가하여 언리얼의 Dedicated Server와 Replication system에 대해 이해하며 데이터 저장 시스템 구현, 인게임 UI 구현, 포스트 프로세싱 효과 구현, Chaos Destruction을 활용한 부서지는 물체 구현 등을 담당했습니다.</p>
+        <h4><strong>주요 구현 내용</strong></h4>
         <ul>
-            <li><strong>a:</strong> d.</li>
-            <li><strong>b:</strong> e.</li>
-            <li><strong>c:</strong> f.</li>
+            <li><strong>Chaos Destruction 활용</strong><br> 언리얼 엔진의 Chaos Destruction 시스템을 활용하여 특정 오브젝트가 총알에 맞았을 때 사실적으로 파괴되는 환경 상호작용 기능을 구현했습니다. GeomertryCollection의 파괴된 조각이 Replication되지 않는 문제가 있었는데, 엔진 내부 코드를 살펴보며 부서진 조각을 Replication하는 함수의 버전이 2개임을 확인하여 이전 버전의 함수를 사용함으로써 문제를 해결했습니다.</li><br>
+            <li><strong>EOS 플레이어 데이터 저장 시스템</strong><br> Epic Online Services(EOS)의 Player Data Storage를 활용하여 플레이어 계정 정보 저장 및 로드 기능을 구현했습니다. 계정 생성 시, 총기 편집 시, 캐릭터 레이아웃 편집 시 등 주요 시점에서 데이터가 저장되어 플레이어의 진행 상황과 커스터마이징 정보를 유지하도록 했습니다.</li><br>
+            <li><strong>인게임 UI 개발</strong><br>
+                <ul>
+                    <li>스코어보드(리더보드) UI Tab 키를 누르면 현재 게임 내 모든 플레이어의 점수를 표시하는 UI를 구현했습니다.</li>
+                    <li>킬로그 UI 플레이어 킬/데스 발생 시 화면에 킬로그 정보를 표시하는 UI 시스템을 구현했습니다.</li>
+                    <li>라운드 요약 UI 게임(라운드) 종료 후 다음 라운드 시작 전 또는 로비로 돌아가기 전에 해당 라운드의 개인 성과(획득 점수, 기여 점수 등)를 보여주는 UI를 구현했습니다.</li>
+                    <li>히트마커 UI 플레이어의 공격이 적중했을 때 화면 중앙에 시각적인 피드백(히트마커)을 표시하는 기능을 구현했습니다. 일반 히트, 킬 결정 히트(붉은색), 방어구 관통 실패 히트(작은 크기) 등 상황에 따라 다른 효과를 표시하도록 했습니다.</li>
+                </ul><br>
+            </li>
+            <li><strong>포스트 프로세싱 효과</strong><br> 플레이어 캐릭터의 체력 상태에 따라 화면 전체에 붉은색 외곽선 효과가 강해지는 포스트 프로세싱 머티리얼을 구현하고 카메라에 적용하여 시각적인 피드백을 강화했습니다.</li><br>
         </ul>
     `,
 
-            p_lw_desc: "언리얼 엔진 기반의 언어 학습 메타버스로, 생성형 AI NPC와의 대화 및 멀티플레이 상호작용을 통해 몰입감 높은 학습 경험을 제공합니다.",
+            p_lw_desc: "언리얼 엔진 5 기반의 언어 학습 메타버스로, 생성형 AI NPC와의 대화 및 멀티플레이 상호작용을 통해 몰입감 높은 학습 경험을 제공합니다.",
             p_lw_detail_desc: `
         <p>2024년 메타버스 경진대회 출품작으로, 언어 학습을 게임처럼 즐길 수 있도록 설계된 언리얼 엔진 기반의 메타버스 프로젝트입니다. 팀장을 맡아 프로젝트의 핵심 시스템 설계를 주도했습니다.</p>
-        <h4><strong>주요 역할 및 구현 내용:</strong></h4>
+        <h4><strong>주요 구현 내용</strong></h4>
         <ul>
-            <li><strong>생성형 AI NPC 구현:</strong> 게임 내 NPC와 채팅 및 음성으로 자유롭게 대화할 수 있는 시스템을 구축했습니다. 생성형 AI를 접목하여 튜토리얼을 진행하는 선생님 NPC부터 카페, 상점 등의 NPC까지, 살아있는 듯한 상호작용을 구현했습니다.</li>
-            <li><strong>멀티플레이 시스템:</strong> Epic Games ID와 연동되는 멀티플레이 환경을 구축하여, 다른 유저들과 실시간 채팅 및 음성 대화가 가능하도록 구현했습니다.</li>
-            <li><strong>채팅 시스템 개발:</strong> 원활한 상호작용의 기반이 되는 인게임 채팅 및 음성 채팅 시스템을 개발했습니다.</li>
+            <li><strong>생성형 AI NPC 구현</strong><br> 게임 내 NPC와 채팅 및 음성으로 자유롭게 대화할 수 있는 시스템을 구축했습니다. 생성형 AI를 접목하여 튜토리얼을 진행하는 선생님 NPC부터 카페, 상점 등의 NPC까지 상호작용을 구현했습니다.</li><br>
+            <li><strong>멀티플레이 시스템</strong><br> Epic Games ID와 연동되는 멀티플레이 환경을 구축하여, 다른 유저들과 실시간 채팅 및 음성 대화가 가능하도록 구현했습니다.</li><br>
+            <li><strong>채팅 시스템 개발</strong><br> 원활한 상호작용의 기반이 되는 인게임 채팅 및 음성 채팅 시스템을 개발했습니다.</li><br>
         </ul>
     `,
             p_ae_desc: "적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.",
             p_ae_detail_desc: `
-        <p>적의 속성에 따라 무기를 변경하며 스테이지를 돌파하는 2D 횡스크롤 런앤건 게임입니다. C++을 기반으로 기본적인 게임 시스템을 직접 구현하며 프로그래밍의 기초를 다졌습니다.</p>
-        <h4><strong>주요 구현 내용:</strong></h4>
+        <p>적의 속성에 따라 무기를 변경하며 스테이지를 돌파하는 2D 횡스크롤 런앤건 게임입니다. 2인 팀의 팀장을 맡아 C++을 기반으로 대부분의 게임 시스템을 직접 구현하며 프로그래밍의 기초를 다졌습니다.</p>
+        <h4><strong>주요 구현 내용</strong></h4>
         <ul>
-            <li><strong>속성 기반 전투 시스템:</strong> 특정 속성 공격에만 피해를 입는 적들을 구현하여 전략적인 무기 선택의 중요성을 강조했습니다.</li>
-            <li><strong>AABB 충돌 로직:</strong> 외부 라이브러리 없이 플레이어, 적, 투사체 간의 충돌을 처리하기 위해 AABB(Axis-Aligned Bounding Box) 충돌 감지 시스템을 직접 구현했습니다.</li>
-            <li><strong>보스전 설계:</strong> 다양한 공격 패턴과 기믹을 가진 보스를 구현하여 도전적인 플레이 경험을 제공합니다.</li>
-            <li><strong>핵심 시스템 개발:</strong> 플레이어의 정교한 이동 및 공격 로직, UI, 점수 저장 및 불러오기 등 게임의 핵심 기능들을 구현했습니다.</li>
+            <li><strong>AABB 충돌 로직</strong><br> 외부 라이브러리 없이 플레이어, 적, 투사체 간의 충돌을 처리하기 위해 AABB(Axis-Aligned Bounding Box) 충돌 감지 시스템을 직접 구현했습니다. Circle-Circle Collision, OBB(Oriented Bounding Box), Per-Pixel Collision등의 충돌 감지 방법도 있지만 지형에 경사면이나 물체의 회전 등이 없기에 연산이 간단한 AABB를 택했습니다.</li><br>
+            <li><strong>보스전 설계</strong><br> 다양한 공격 패턴과 기믹을 가진 보스를 구현하여 도전적인 플레이 경험을 제공합니다.</li><br>
+            <li><strong>속성 기반 전투 시스템</strong><br> 불, 물, 전기 3가지 속성 중 특정 속성 공격에만 피해를 입는 적들을 구현하여 전략적인 무기 선택의 중요성을 강조했습니다.</li><br>
+            <li><strong>핵심 시스템 개발</strong><br> 플레이어의 정교한 이동 및 점프를 구현하며 중력 가속도 등 간단한 물리 지식을 사용했습니다. 또한 공격 로직, UI, 점수 저장 및 불러오기 등 게임의 핵심 기능들을 구현했습니다.</li><br>
+            모든 몬스터와 보스는 Nav Mesh를 활용하여 플레이어의 위치를 추적하도록 구현했습니다.
         </ul>
         <br>
         <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
     `,
-
-            p_gp_desc: "C언어 기반의 횡스크롤 디펜스 게임으로, 다양한 유닛을 소환하고 영웅을 조작하여 전투를 벌이는 프로젝트입니다.",
-            p_gp_detail_desc: `
-        <p>다양한 유닛을 소환하고 영웅을 직접 조작하여 적의 기지를 파괴하는 횡스크롤 디펜스 게임입니다. C언어 기반의 2D 그래픽 라이브러리인 <a href="https://github.com/DigiPen-Faculty/CProcessing" target="_blank">Cprocessing Engine</a>을 사용하여 개발하였습니다.</p>
-        <h4><strong>주요 구현 내용:</strong></h4>
-        <ul>
-            <li><strong>유닛 소환 및 전투 시스템:</strong> 자원을 소모하여 다양한 유닛을 소환하고, 각 유닛이 적과 자동으로 충돌하여 전투를 벌이는 로직을 구현했습니다.</li>
-            <li><strong>영웅 컨트롤 및 스킬:</strong> 플레이어가 직접 조작하는 영웅 캐릭터의 공격 및 고유 스킬 시스템을 구현하여 전략적인 변수를 추가했습니다.</li>
-            <li><strong>게임 목표 시스템:</strong> 적의 기지를 파괴하면 승리하는 명확한 게임 목표와 로직을 설계했습니다.</li>
-        </ul>
-        <br>
-        <a href="https://github.com/WestMinsu/CProcessingProject" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
-    `,
-
-            p_id_desc: "Unity와 C#으로 개발한 쿼터뷰 3D 액션 게임입니다. Nav Mesh를 활용한 몬스터 AI와 다양한 공격 패턴을 구현했습니다.",
+            p_id_desc: "Unity와 C#으로 개발한 쿼터뷰 3D 액션 게임입니다.",
             p_id_detail_desc: `
-        <p>Unity와 C#을 사용하여 개발한 쿼터뷰 3D 액션 게임입니다. 팀장 역할을 맡아 프로젝트를 이끌었으며, 특히 몬스터와 보스의 AI 로직 및 공격 패턴 구현에 중점을 두었습니다.</p>
-        <h4><strong>주요 역할 및 구현 내용:</strong></h4>
+        <p>Unity와 C#을 사용하여 개발한 쿼터뷰 3D 액션 게임입니다. 4인 팀의 팀장 역할을 맡아 프로젝트를 이끌었으며, 특히 몬스터와 보스의 AI 로직 및 공격 패턴 구현에 중점을 두었습니다.</p>
+        <h4><strong>주요 구현 내용</strong></h4>
         <ul>
-            <li><strong>몬스터 및 보스 AI:</strong> Nav Mesh를 활용하여 모든 적이 플레이어를 지능적으로 추적하고, 각기 다른 특성을 가진 공격 패턴(근접, 원거리, 돌진 등)을 구사하도록 설계했습니다.</li>
-            <li><strong>보스 패턴 시스템:</strong> Minotaur 보스가 Random.Range()를 통해 도끼 휘두르기, 돌진, 원거리 투척 등 다양한 공격을 무작위로 사용하도록 구현하여 전투의 긴장감을 높였습니다.</li>
-            <li><strong>입력 및 충돌 처리:</strong> 키보드/마우스 입력 시스템을 구축하고, Rigidbody와 Ray를 이용해 점프, 공격 판정, 벽 충돌 등 정교한 물리 상호작용을 구현했습니다.</li>
-            <li><strong>UI 시스템:</strong> Canvas를 기반으로 상점, 메뉴 등 상호작용이 가능한 UI를 제작했으며, 비동기 처리가 필요한 부분에는 코루틴을 적극적으로 활용했습니다.</li>
+            <li><strong>몬스터 및 보스 AI:</strong> Nav Mesh를 활용하여 3종류의 몬스터가 플레이어를 지능적으로 추적하고, 각기 다른 특성을 가진 공격 패턴(근접, 원거리, 돌진 등)을 구사하도록 설계했습니다.</li><br>
+            <li><strong>보스 패턴 시스템:</strong> Minotaur 보스가 Random.Range()를 통해 도끼 휘두르기, 돌진, 원거리 투척의 3가지 공격을 무작위로 사용하도록 구현하여 전투의 긴장감을 높였습니다.</li><br>
+            <li><strong>입력 및 충돌 처리:</strong> 키보드/마우스 입력 시스템을 구축하고, Rigidbody와 Ray를 이용해 점프, 공격 판정, 벽 충돌 등 정교한 물리 상호작용을 구현했습니다.</li><br>
+            <li><strong>UI 시스템:</strong> Canvas를 기반으로 상점, 메뉴 등 상호작용이 가능한 UI를 제작했으며, 비동기 처리가 필요한 부분에는 코루틴을 적극적으로 활용했습니다.</li><br>
         </ul>
     `
         }, 
