@@ -147,6 +147,8 @@
             <li><strong>입력 및 충돌 처리:</strong> 키보드/마우스 입력 시스템을 구축하고, Rigidbody와 Ray를 이용해 점프, 공격 판정, 벽 충돌 등 정교한 물리 상호작용을 구현했습니다.</li><br>
             <li><strong>UI 시스템:</strong> Canvas를 기반으로 상점, 메뉴 등 상호작용이 가능한 UI를 제작했으며, 비동기 처리가 필요한 부분에는 코루틴을 적극적으로 활용했습니다.</li><br>
         </ul>
+        <br>
+        <a href="https://github.com/WestMinsu/CG_Unity_Project" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
     `
         }, 
         en: {
