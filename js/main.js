@@ -99,9 +99,9 @@
         <p>메카 소녀 FPS 게임입니다. 게임 시작 전 무기, 방어구, 장비 등으로 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치(가격)가 소모되며 이 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다. 2인 팀의 팀원으로 참가하여 언리얼의 Dedicated Server와 Replication system에 대해 이해하며 데이터 저장 시스템 구현, 인게임 UI 구현, 포스트 프로세싱 효과 구현, Chaos Destruction을 활용한 부서지는 물체 구현 등을 담당했습니다.</p>
         <h4><strong>주요 구현 내용</strong></h4>
         <ul>
-            <li><strong>Grunt(AI 플레이어) 제작</strong><br> BlackBoard와 Behavior Tree를 활용하여 Grunt(AI 플레이어)를 구현했습니다. 랜덤한 위치를 돌아다니다가 적을 감지하면 총을 일정한 속도로 발사하도록 했습니다. AI에게 죽을 경우 KillCam이 작동하지 않는 문제가 있었습니다. AIController는 서버에만 존재하고 클라이언트에 Replication되지 않기 때문임을 이해하고, Killer의 PlayerState가 없으면 AI로 처리하여 문제를 해결했습니다.
+            <li><strong>Grunt(AI 플레이어) 제작</strong><br> BlackBoard와 Behavior Tree를 활용하여 Grunt(AI 플레이어)를 구현했습니다. 랜덤한 위치를 돌아다니다가 적을 감지하면 총을 일정한 속도로 발사하도록 했습니다. AI에게 죽을 경우 KillCam()이 작동하지 않는 문제가 있었습니다. AIController는 서버에만 존재하고 클라이언트에 Replication되지 않기 때문임을 이해하고, Killer의 PlayerState가 없으면 AI로 처리하여 문제를 해결했습니다.
             <li><strong>EOS 플레이어 데이터 저장 시스템</strong><br> Epic Online Services(EOS)의 Player Data Storage를 활용하여 플레이어 계정 정보 저장 및 로드 기능을 구현했습니다. 계정 생성 시, 총기 편집 시, 캐릭터 레이아웃 편집 시 등 주요 시점에서 데이터가 저장되어 플레이어의 진행 상황과 커스터마이징 정보를 유지하도록 했습니다.</li><br>
-            <li><strong>Chaos Destruction을 활용하여 총을 맞으면 부서지는 벽 제작</strong></li><br>
+            <li><strong>Chaos Destruction 활용</strong></li><br> 언리얼 엔진의 Chaos Destruction을 활용하여 특정한 벽을 Geometry Collection 총을 맞으면 부서지도록 구현했습니다.
             <li><strong>인게임 UI 개발</strong><br>
                 <ul>
                     <li>KillCam UI - 죽은 플레이어에게 잠시 동안 자신을 죽인 사람의 닉네임과 현재 상태를 보여주도록 했습니다.</li>
