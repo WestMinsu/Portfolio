@@ -1,14 +1,4 @@
-﻿/*
-  Theme Name: Videograph
-  Theme URI: https://colorlib.com/wp/templates/
-  Author: Colorlib
-  Author URI: https://colorlib.com/
-  Description: Videograph is a creatives landing page template
-  Version: 1.0.0
-  Tags: videograph, creative, html
-*/
-
-'use strict';
+﻿'use strict';
 
 (function ($) {
 
@@ -20,7 +10,7 @@
         $("#preloder").delay(200).fadeOut("slow");
 
         // Set default language after preloader is done
-        setLanguage('ko'); 
+        setLanguage('ko');
     });
 
     /*------------------
@@ -32,16 +22,16 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
     });
 
     /*------------------
-		Hero Slider
-	--------------------*/
+        Hero Slider
+    --------------------*/
     $(".hero__slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -87,13 +77,47 @@
             nav_pages: "페이지",
             nav_dropdown_portfolio: "포트폴리오",
             nav_contact: "연락처",
-            hero_role: "게임 프로그래머",
+            hero_role: "렌더링 프로그래머",
             hero_name: "서민수",
-            hero_button: "포트폴리오 보기",
             passion_title: "Beyond the game",
-            passion_text: "게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 그래픽 렌더링 기술에 많은 관심을 가지고 있습니다. 캐주얼한 게임도 좋아하지만, 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고, 화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다. 플레이어들에게 잊지 못할 경험을 제공하는 게임을 만들고 싶습니다.",
-            copyright_text: `Copyright © ${new Date().getFullYear()} All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>`,
-
+            passion_text: "게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 게임 그래픽 렌더링 기술에 많은 관심을 가지고 있으며, 실시간 렌더링 파이프라인과 GPU 기반 최적화를 직접 구현하며 역량을 쌓고 있습니다. 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고, 화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다.",
+            portfolio_page_title: "주요 프로젝트",
+            focus_rhi_title: "공통 RHI",
+            focus_rhi_text: "DX12와 Vulkan을 하나의 RHI로 추상화하여 동일한 렌더링 코드로 양쪽 백엔드를 구동합니다.",
+            focus_bindless_title: "Bindless",
+            focus_bindless_text: "단일 Global Descriptor로 모든 리소스에 인덱스로 접근합니다.",
+            focus_graph_title: "Render Graph",
+            focus_graph_text: "렌더링 순서와 GPU 동기화를 프레임마다 자동으로 결정합니다.",
+            focus_gpu_title: "GPU-Driven",
+            focus_gpu_text: "Compute culling으로 가시성을 판별하고, 결과를 indirect draw로 한 번에 처리합니다.",
+            p_we_title: "WestEngine",
+            p_we_desc: "DirectX 12/Vulkan 듀얼 백엔드 RHI, Bindless 리소스 모델, Render Graph, GPU-driven 렌더링, Deferred PBR 파이프라인을 구현한 렌더링 엔진입니다.",
+            p_we_tag1: "DirectX 12",
+            p_we_tag2: "Vulkan",
+            p_we_tag3: "C++ / Slang",
+            p_we_detail_desc: `
+        <p>WestEngine은 DirectX 12와 Vulkan 듀얼 백엔드를 하나의 RHI(Rendering Hardware Interface)로 추상화한 실시간 렌더링 엔진입니다. Amazon Lumberyard Bistro(약 2.84M triangles) 씬을 DX12와 Vulkan 모두 동일한 렌더링 코드로 구동하며, 백엔드가 바뀌어도 상위 파이프라인 코드는 수정 없이 동작합니다.</p>
+        <h4><strong>핵심 구현</strong></h4>
+        <ul>
+            <li><strong>RHI 추상화:</strong> IRHIDevice, IRHICommandList, IRHIFence 등 15개 인터페이스를 두어 DX12/Vulkan 타입이 렌더링 코드에 직접 노출되지 않습니다.</li>
+            <li><strong>Bindless 모델:</strong> 엔진 전체가 하나의 Global Root Signature / Descriptor Set Layout을 공유하며, 셰이더에는 BindlessIndex만 넘깁니다.</li>
+            <li><strong>Render Graph:</strong> 각 Pass가 읽고 쓰는 리소스를 등록하면 컴파일러가 barrier, transition, transient resource aliasing을 자동으로 삽입합니다.</li>
+            <li><strong>GPU-Driven 렌더링:</strong> Compute culling 결과를 indirect arguments buffer에 기록한 뒤, ExecuteIndirect(DX12) / DrawIndexedIndirectCount(Vulkan)로 GPU가 직접 draw call을 수행합니다.</li>
+            <li><strong>Deferred PBR:</strong> GBuffer -> Shadow -> SSAO -> Deferred Lighting(IBL 포함) -> Bokeh DOF -> Tone Mapping -> 색 보정 후처리 스택으로 구성했습니다.</li>
+            <li><strong>셰이더 파이프라인:</strong> Slang으로 하나의 소스에서 DXIL과 SPIR-V를 오프라인 생성하고, CMake depfile로 증분 빌드를 관리합니다.</li>
+        </ul>
+        <h4><strong>성능 측정</strong></h4>
+        <ul>
+            <li>Bistro의 mesh/instance 22,396개를 material + transform 기준으로 128개 draw unit으로 병합</li>
+            <li>Release 빌드, RTX 3060, 1920x1061 기준 - DX12 272.3 FPS / Vulkan 279.4 FPS (median)</li>
+            <li>Texture cache + batch upload + 1024px texture cap 적용 후 로딩 시간 - DX12 1,162 ms / Vulkan 997 ms</li>
+        </ul>
+        <br>
+        <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Github로 이동</a>
+    `,
+            p_ap_title: "Arsenal",
+            p_ap_tag1: "Unreal Engine",
+            p_ap_tag2: "C++",
             p_ap_desc: "언리얼 엔진 5를 사용하여 개발한 메카 소녀 FPS 게임입니다. 게임 시작 전 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.",
             p_ap_detail_desc: `
         <p>메카 소녀 FPS 게임입니다. 게임 시작 전 무기, 방어구, 장비 등으로 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치(가격)가 소모되며 이 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다. 2인 팀의 팀원으로 참가하여 언리얼의 Dedicated Server와 Replication system에 대해 이해하며 데이터 저장 시스템 구현, 인게임 UI 구현, 포스트 프로세싱 효과 구현, Chaos Destruction을 활용한 부서지는 물체 구현 등을 담당했습니다.</p>
@@ -102,7 +126,6 @@
             <li><strong>Grunt(AI 플레이어) 제작</strong><br> BlackBoard와 Behavior Tree를 활용하여 Grunt(AI 플레이어)를 구현했습니다. 랜덤한 위치를 돌아다니다가 적을 감지하면 총을 일정한 속도로 발사하도록 했습니다. AI에게 죽을 경우 KillCam()이 작동하지 않는 문제가 있었습니다. AIController는 서버에만 존재하고 클라이언트에 Replication되지 않기 때문임을 이해하고, Killer의 PlayerState가 없으면 AI로 처리하여 문제를 해결했습니다.</li><br>
             <li><strong>Chaos Destruction 활용</strong><br> 언리얼 엔진의 Chaos Destruction 시스템을 활용하여 총알에 맞았을 때 파괴되는 벽을 구현했습니다.</li><br>
             <li><strong>EOS 플레이어 데이터 저장 시스템</strong><br> Epic Online Services(EOS)의 Player Data Storage를 활용하여 플레이어 계정 정보 저장 및 로드 기능을 구현했습니다. 계정 생성 시, 총기 편집 시, 캐릭터 레이아웃 편집 시 등 주요 시점에서 데이터가 저장되어 플레이어의 진행 상황과 커스터마이징 정보를 유지하도록 했습니다.</li><br>
-            <li><strong>Chaos Destruction 활용</strong></li><br> 언리얼 엔진의 Chaos Destruction을 활용하여 특정한 벽을 Geometry Collection 총을 맞으면 부서지도록 구현했습니다.
             <li><strong>인게임 UI 개발</strong><br>
                 <ul>
                     <li>KillCam UI - 죽은 플레이어에게 잠시 동안 자신을 죽인 사람의 닉네임과 현재 상태를 보여주도록 했습니다.</li>
@@ -116,16 +139,6 @@
         </ul>
     `,
 
-            p_lw_desc: "언리얼 엔진 5 기반의 언어 학습 메타버스로, 생성형 AI NPC와의 대화 및 멀티플레이 상호작용을 통해 몰입감 높은 학습 경험을 제공합니다.",
-            p_lw_detail_desc: `
-        <p>2024년 메타버스 경진대회 출품작으로, 언어 학습을 게임처럼 즐길 수 있도록 설계된 언리얼 엔진 기반의 메타버스 프로젝트입니다. 팀장을 맡아 프로젝트의 핵심 시스템 설계를 주도했습니다.</p>
-        <h4><strong>주요 구현 내용</strong></h4>
-        <ul>
-            <li><strong>생성형 AI NPC 구현</strong><br> 게임 내 NPC와 채팅 및 음성으로 자유롭게 대화할 수 있는 시스템을 구축했습니다. 생성형 AI를 접목하여 튜토리얼을 진행하는 선생님 NPC부터 카페, 상점 등의 NPC까지 상호작용을 구현했습니다.</li><br>
-            <li><strong>멀티플레이 시스템</strong><br> Epic Games ID와 연동되는 멀티플레이 환경을 구축하여, 다른 유저들과 실시간 채팅 및 음성 대화가 가능하도록 구현했습니다.</li><br>
-            <li><strong>채팅 시스템 개발</strong><br> 원활한 상호작용의 기반이 되는 인게임 채팅 및 음성 채팅 시스템을 개발했습니다.</li><br>
-        </ul>
-    `,
             p_ae_desc: "적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.",
             p_ae_detail_desc: `
         <p>적의 속성에 따라 무기를 변경하며 스테이지를 돌파하는 2D 횡스크롤 런앤건 게임입니다. 2인 팀의 팀장을 맡아 C++을 기반으로 대부분의 게임 시스템을 직접 구현하며 프로그래밍의 기초를 다졌습니다.</p>
@@ -135,49 +148,73 @@
             <li><strong>보스전 설계</strong><br> 다양한 공격 패턴과 기믹을 가진 보스를 구현하여 도전적인 플레이 경험을 제공합니다.</li><br>
             <li><strong>속성 기반 전투 시스템</strong><br> 불, 물, 전기 3가지 속성 중 특정 속성 공격에만 피해를 입는 적들을 구현하여 전략적인 무기 선택의 중요성을 강조했습니다.</li><br>
             <li><strong>핵심 시스템 개발</strong><br> 플레이어의 정교한 이동 및 점프를 구현하며 중력 가속도 등 간단한 물리 지식을 사용했습니다. 또한 공격 로직, UI, 점수 저장 및 불러오기 등 게임의 핵심 기능들을 구현했습니다.</li><br>
-            모든 몬스터와 보스는 Nav Mesh를 활용하여 플레이어의 위치를 추적하도록 구현했습니다.
         </ul>
         <br>
-        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
+        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">Github로 이동</a>
     `,
-            p_id_desc: "Unity와 C#으로 개발한 쿼터뷰 3D 액션 게임입니다.",
-            p_id_detail_desc: `
-        <p>Unity와 C#을 사용하여 개발한 쿼터뷰 3D 액션 게임입니다. 4인 팀의 팀장 역할을 맡아 프로젝트를 이끌었으며, 특히 몬스터와 보스의 AI 로직 및 공격 패턴 구현에 중점을 두었습니다.</p>
-        <h4><strong>주요 구현 내용</strong></h4>
-        <ul>
-            <li><strong>몬스터 및 보스 AI:</strong> Nav Mesh를 활용하여 3종류의 몬스터가 플레이어를 지능적으로 추적하고, 각기 다른 특성을 가진 공격 패턴(근접, 원거리, 돌진 등)을 구사하도록 설계했습니다.</li><br>
-            <li><strong>보스 패턴 시스템:</strong> Minotaur 보스가 Random.Range()를 통해 도끼 휘두르기, 돌진, 원거리 투척의 3가지 공격을 무작위로 사용하도록 구현하여 전투의 긴장감을 높였습니다.</li><br>
-            <li><strong>입력 및 충돌 처리:</strong> 키보드/마우스 입력 시스템을 구축하고, Rigidbody와 Ray를 이용해 점프, 공격 판정, 벽 충돌 등 정교한 물리 상호작용을 구현했습니다.</li><br>
-            <li><strong>UI 시스템:</strong> Canvas를 기반으로 상점, 메뉴 등 상호작용이 가능한 UI를 제작했으며, 비동기 처리가 필요한 부분에는 코루틴을 적극적으로 활용했습니다.</li><br>
-        </ul>
-        <br>
-        <a href="https://github.com/WestMinsu/CG_Unity_Project" target="_blank" class="primary-btn">GitHub에서 코드 보기</a>
-    `
-        }, 
+            p_ae_title: "Arcane Edge",
+            p_ae_tag1: "C++ Project"
+        },
         en: {
             nav_home: "Home",
             nav_portfolio: "Portfolio",
             nav_pages: "Pages",
             nav_dropdown_portfolio: "Portfolio",
             nav_contact: "Contact",
+            hero_role: "Rendering Programmer",
+            hero_name: "Minsu Seo",
             passion_title: "Beyond the game",
-            passion_text: "I believe games are a powerful medium, capable of delivering unparalleled emotion and engagement that rival any form of entertainment. This conviction fuels my passion for graphics rendering technologies. While I enjoy casual games, my true focus lies in harnessing cutting-edge rendering techniques to craft visually stunning games with immersive environments and lifelike characters. My goal is to create titles that captivate players, blending brilliant visual effects with unforgettable experiences that leave a lasting impact.",
-            copyright_text: `Copyright © ${new Date().getFullYear()} All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>`,
-            video_title: "Featured Project",
-            video_subtitle: "A summary of my work and skills.",
-            video_placeholder_text: "Video Coming Soon",
-
-            p_lw_desc: "A language learning metaverse based on Unreal Engine, providing an immersive learning experience through conversations with Generative AI NPCs and multiplayer interactions.",
-            p_lw_detail_desc: `
-        <p>Submitted to the 2024 Metaverse Competition, this is a metaverse project based on Unreal Engine, designed to make language learning as enjoyable as a game. As the team leader, I led the design of the project's core systems.</p>
-        <h4><strong>Key Roles and Implementations:</strong></h4>
+            passion_text: "I see games as a medium that can deliver emotion and engagement beyond simple entertainment. That is why I am especially interested in game graphics rendering, and I have been building my skills by implementing real-time rendering pipelines and GPU-oriented optimization in WestEngine. I want to use advanced rendering techniques to create believable environments, expressive characters, and visually compelling game experiences.",
+            portfolio_page_title: "Featured Projects",
+            focus_rhi_title: "Unified RHI",
+            focus_rhi_text: "DX12 and Vulkan differences stay behind one renderer-facing interface.",
+            focus_bindless_title: "Bindless",
+            focus_bindless_text: "Resources are accessed by index through one global descriptor model.",
+            focus_graph_title: "Render Graph",
+            focus_graph_text: "Pass intent resolves barriers, transitions, and aliasing.",
+            focus_gpu_title: "GPU-Driven",
+            focus_gpu_text: "Compute culling feeds indirect draw submission.",
+            p_we_title: "WestEngine",
+            p_we_desc: "A DirectX 12/Vulkan dual-backend rendering engine with a bindless RHI, render graph, GPU-driven rendering, and deferred PBR pipeline.",
+            p_we_tag1: "DirectX 12",
+            p_we_tag2: "Vulkan",
+            p_we_tag3: "C++ / Slang",
+            p_we_detail_desc: `
+        <p>WestEngine is a real-time rendering engine that abstracts DirectX 12 and Vulkan behind a single RHI. It runs the Amazon Lumberyard Bistro scene, about 2.84M triangles, through the same high-level rendering path while keeping backend-specific API details out of the renderer.</p>
+        <h4><strong>Core Implementation</strong></h4>
         <ul>
-            <li><strong>Generative AI NPC Implementation:</strong> Built a system allowing free-form chat and voice conversations with in-game NPCs. Integrated Generative AI to create lifelike interactions, from a tutorial-guiding teacher NPC to various characters in cafes and shops.</li>
-            <li><strong>Multiplayer System:</strong> Established a multiplayer environment linked with Epic Games ID, enabling real-time text and voice chat among users.</li>
-            <li><strong>Chat System Development:</strong> Developed the foundational in-game text and voice chat systems to facilitate seamless user interaction.</li>
+            <li><strong>RHI abstraction:</strong> 15 interfaces such as IRHIDevice, IRHICommandList, and IRHIFence prevent DX12/Vulkan types from leaking into upper rendering code.</li>
+            <li><strong>Bindless model:</strong> The engine uses one global root signature / descriptor set layout and passes BindlessIndex values to shaders.</li>
+            <li><strong>Render graph:</strong> Pass/resource intent is compiled into barriers, transitions, and transient resource aliasing.</li>
+            <li><strong>GPU-driven rendering:</strong> Compute culling writes indirect arguments consumed by DX12 ExecuteIndirect and Vulkan DrawIndexedIndirectCount.</li>
+            <li><strong>Deferred PBR:</strong> The pipeline includes GBuffer, shadows, SSAO, deferred lighting, IBL, Bokeh DOF, tone mapping, and color grading.</li>
+            <li><strong>Shader pipeline:</strong> Slang generates DXIL and SPIR-V from shared shader sources with CMake depfile-based incremental builds.</li>
+        </ul>
+        <h4><strong>Measured Results</strong></h4>
+        <ul>
+            <li>22,396 Bistro mesh/instance units are merged into 128 material + transform draw units.</li>
+            <li>Release build, RTX 3060, 1920x1061: 272.3 FPS on DX12 and 279.4 FPS on Vulkan median.</li>
+            <li>Texture cache, batch upload, and a 1024px material texture cap reduced Bistro load time to 1,162 ms on DX12 and 997 ms on Vulkan.</li>
+        </ul>
+        <br>
+        <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Go to Github</a>
+    `,
+            p_ap_title: "Arsenal",
+            p_ap_tag1: "Unreal Engine",
+            p_ap_tag2: "C++",
+            p_ap_desc: "A mech-girl FPS built with Unreal Engine 5. I worked on gameplay support systems including AI, player data storage, UI, destruction, and post-processing feedback.",
+            p_ap_detail_desc: `
+        <p>Arsenal is a mech-girl FPS built with Unreal Engine 5. As one of two programmers, I worked with dedicated server and replication concepts while implementing player data storage, in-game UI, post-processing feedback, AI behavior, and destructible objects.</p>
+        <h4><strong>Key Implementation Details</strong></h4>
+        <ul>
+            <li><strong>AI player:</strong> Implemented a Grunt AI using Blackboard and Behavior Tree, including server-only AIController edge cases for kill-cam handling.</li>
+            <li><strong>EOS player data:</strong> Used Epic Online Services Player Data Storage to persist account, weapon editing, and layout customization data.</li>
+            <li><strong>In-game UI:</strong> Built kill-cam, scoreboard, kill log, round summary, and hit marker UI systems.</li>
+            <li><strong>Visual feedback:</strong> Added health-based post-processing and Chaos Destruction objects that break when shot.</li>
         </ul>
     `,
-
+            p_ae_title: "Arcane Edge",
+            p_ae_tag1: "C++ Project",
             p_ae_desc: "A C++ based 2D side-scrolling run-and-gun game where you switch weapons based on enemy attributes.",
             p_ae_detail_desc: `
         <p>A 2D side-scrolling run-and-gun game where players must clear stages by switching weapons according to enemy attributes. Built the fundamental game systems from the ground up using C++ to solidify programming basics.</p>
@@ -189,54 +226,29 @@
             <li><strong>Core Systems Development:</strong> Implemented core game features, including precise player movement and attack logic, UI, and a score saving/loading system.</li>
         </ul>
         <br>
-        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">View Code on GitHub</a>
-    `,
-
-            p_gp_desc: "A side-scrolling defense game based on C, featuring strategic combat by summoning various units and controlling a hero.",
-            p_gp_detail_desc: `
-        <p>A side-scrolling defense game where players summon various units and directly control a hero to destroy the enemy base. This project was developed using the <a href="https://github.com/DigiPen-Faculty/CProcessing" target="_blank">Cprocessing Engine</a>, a 2D graphics library for the C language.</p>
-        <h4><strong>Key Implementation Details:</strong></h4>
-        <ul>
-            <li><strong>Unit Summoning & Combat System:</strong> Implemented logic for summoning diverse units by consuming resources, where each unit automatically engages in combat upon collision with enemies.</li>
-            <li><strong>Hero Control & Skills:</strong> Added strategic variables by implementing a controllable hero character with unique attack and skill systems.</li>
-            <li><strong>Game Objective System:</strong> Designed a clear game objective and logic where victory is achieved by destroying the enemy's base.</li>
-        </ul>
-        <br>
-        <a href="https://github.com/WestMinsu/CProcessingProject" target="_blank" class="primary-btn">View Code on GitHub</a>
-    `,
-
-            p_id_desc: "A quarter-view 3D action game developed with Unity and C#. Implemented monster AI using Nav Mesh and various attack patterns.",
-            p_id_detail_desc: `
-        <p>A quarter-view 3D action game developed using Unity and C#. As the team leader, I led the project and focused particularly on implementing the AI logic and attack patterns for monsters and bosses.</p>
-        <h4><strong>Key Roles and Implementations:</strong></h4>
-        <ul>
-            <li><strong>Monster & Boss AI:</strong> Designed all enemies to intelligently track the player using Nav Mesh, equipped with unique attack patterns such as melee, ranged, and charge attacks.</li>
-            <li><strong>Boss Pattern System:</strong> Implemented the Minotaur boss to randomly use various attacks (axe swing, charge, ranged throw) via Random.Range(), enhancing combat tension.</li>
-            <li><strong>Input & Collision Handling:</strong> Built an intuitive keyboard/mouse input system and implemented precise physics interactions like jumping, attack detection, and wall collisions using Rigidbody and Ray.</li>
-            <li><strong>UI System:</strong> Created interactive UI elements like shops and menus based on Canvas, actively utilizing Coroutines for asynchronous operations.</li>
-        </ul>
+        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">Go to Github</a>
     `
         }
     };
 
-const setLanguage = (lang) => {
-    // 텍스트 변경
-    document.querySelectorAll('[data-lang-key]').forEach(elem => {
-        const key = elem.getAttribute('data-lang-key');
-        if (translations[lang] && translations[lang][key]) {
-            elem.innerHTML = translations[lang][key];
-        }
-    });
+    const setLanguage = (lang) => {
+        // 텍스트 변경
+        document.querySelectorAll('[data-lang-key]').forEach(elem => {
+            const key = elem.getAttribute('data-lang-key');
+            if (translations[lang] && translations[lang][key]) {
+                elem.innerHTML = translations[lang][key];
+            }
+        });
 
-    // 'active' 클래스를 올바른 li 태그에 적용 (이 부분은 그대로 유지)
-    if (lang === 'ko') {
-        $('#lang-menu-ko').addClass('active');
-        $('#lang-menu-en').removeClass('active');
-    } else {
-        $('#lang-menu-en').addClass('active');
-        $('#lang-menu-ko').removeClass('active');
-    }
-};
+        // 'active' 클래스를 올바른 li 태그에 적용 (이 부분은 그대로 유지)
+        if (lang === 'ko') {
+            $('#lang-menu-ko').addClass('active');
+            $('#lang-menu-en').removeClass('active');
+        } else {
+            $('#lang-menu-en').addClass('active');
+            $('#lang-menu-ko').removeClass('active');
+        }
+    };
 
     // KO 메뉴 클릭 이벤트
     $('#lang-menu-ko').on('click', function (e) {

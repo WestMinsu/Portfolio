@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Videograph Template">
-    <meta name="keywords" content="Videograph, unica, creative, html">
+    <meta name="description" content="Minsu Seo rendering intern portfolio focused on WestEngine.">
+    <meta name="keywords" content="rendering programmer, DirectX 12, Vulkan, C++, WestEngine, portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Minsu Seo's Portfolio</title>
+    <title>Minsu Seo | Rendering Intern Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
@@ -59,10 +59,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span data-lang-key="hero_role">Game Programmer</span>
-                                <h2>Minsu Seo</h2>
-                                <a href="#portfolio" class="primary-btn scroll-btn" data-lang-key="hero_button">See my
-                                    portfolio</a>
+                                <span data-lang-key="hero_role">Rendering Programmer</span>
+                                <h2 data-lang-key="hero_name">Minsu Seo</h2>
                             </div>
                         </div>
                     </div>
@@ -70,46 +68,64 @@
             </div>
         </div>
     </section>
-    <section class="services spad">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="services__title text-center">
-                        <div class="section-title">
-                            <div class="section-title center-title">
-                                <h2 data-lang-key="passion_title">Beyond the game</h2>
-                            </div>
-                            <p data-lang-key="passion_text">I believe games are a powerful medium, capable of delivering
-                                unparalleled emotion and engagement that rival any form of entertainment. This
-                                conviction fuels my passion for graphics rendering technologies. While I enjoy casual
-                                games, my true focus lies in harnessing cutting-edge rendering techniques to craft
-                                visually stunning games with immersive environments and lifelike characters. My goal is
-                                to create titles that captivate players, blending brilliant visual effects with
-                                unforgettable experiences that leave a lasting impact.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
     <section class="portfolio spad" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title center-title">
-                        <h2 data-lang-key="portfolio_page_title">My Portfolio</h2>
+                        <h2 data-lang-key="portfolio_page_title">Featured Projects</h2>
                     </div>
-                    <ul class="portfolio__filter">
-                        <li class="active" data-filter="*" data-lang-key="filter_all">All</li>
-                        <li data-filter=".unreal" data-lang-key="filter_unreal">Unreal</li>
-                        <li data-filter=".cpp" data-lang-key="filter_cpp">C++</li>
-                        <li data-filter=".unity" data-lang-key="filter_unity">Unity</li>
-                    </ul>
                 </div>
             </div>
-            <div class="row portfolio__gallery">
+            <div class="row portfolio__gallery portfolio__gallery--stacked">
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mix unreal">
-                    <div class="portfolio__item">
+                <div class="col-lg-12 col-md-12 col-sm-12 mix rendering cpp">
+                    <div class="portfolio__item portfolio__item--featured">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/bistro.png">
+                            <a href="#popup-we" class="play-btn popup-with-content"><i class="fa fa-search"></i></a>
+                        </div>
+                        <div class="portfolio__item__description">
+                            <h4 data-lang-key="p_we_title">WestEngine</h4>
+                            <p data-lang-key="p_we_desc">
+                                DirectX 12/Vulkan dual-backend rendering engine with bindless RHI, render graph,
+                                GPU-driven rendering, and deferred PBR.
+                            </p>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4 data-lang-key="p_we_title">WestEngine</h4>
+                            <ul>
+                                <li data-lang-key="p_we_tag1">DirectX 12</li>
+                                <li data-lang-key="p_we_tag2">Vulkan</li>
+                                <li data-lang-key="p_we_tag3">C++20 / Slang</li>
+                            </ul>
+                        </div>
+                        <div class="render-focus render-focus--project">
+                            <div class="render-focus__item">
+                                <i class="fa fa-sitemap"></i>
+                                <h4 data-lang-key="focus_rhi_title">Unified RHI</h4>
+                                <p data-lang-key="focus_rhi_text">One renderer path over DX12 and Vulkan backends.</p>
+                            </div>
+                            <div class="render-focus__item">
+                                <i class="fa fa-database"></i>
+                                <h4 data-lang-key="focus_bindless_title">Bindless</h4>
+                                <p data-lang-key="focus_bindless_text">Resources are accessed by index through one global descriptor model.</p>
+                            </div>
+                            <div class="render-focus__item">
+                                <i class="fa fa-random"></i>
+                                <h4 data-lang-key="focus_graph_title">Render Graph</h4>
+                                <p data-lang-key="focus_graph_text">Pass intent drives barriers, transitions, and aliasing.</p>
+                            </div>
+                            <div class="render-focus__item">
+                                <i class="fa fa-microchip"></i>
+                                <h4 data-lang-key="focus_gpu_title">GPU-Driven</h4>
+                                <p data-lang-key="focus_gpu_text">Compute culling feeds indirect draw submission.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 mix unreal">
+                    <div class="portfolio__item portfolio__item--secondary">
                         <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arsenal.png">
                             <a href="#popup-ap" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
                         </div>
@@ -129,29 +145,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mix unreal">
-                    <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/language_world.png">
-                            <a href="#popup-lw" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="portfolio__item__description">
-                            <h4 data-lang-key="p_lw_title">Language World</h4>
-                            <p data-lang-key="p_lw_desc">
-                                언어 학습을 게임처럼 즐길 수 있도록 설계된 메타버스 프로젝트입니다. Unreal Engine의 블루프린트를 사용하여 핵심 로직을 구현했습니다.
-                            </p>
-                        </div>
-                        <div class="portfolio__item__text">
-                            <h4 data-lang-key="p_lw_title">Language World</h4>
-                            <ul>
-                                <li data-lang-key="p_lw_tag1">Unreal Engine</li>
-                                <li data-lang-key="p_lw_tag2">Blueprint</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-6 mix cpp">
-                    <div class="portfolio__item">
+                <div class="col-lg-12 col-md-12 col-sm-12 mix cpp">
+                    <div class="portfolio__item portfolio__item--secondary">
                         <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arcane_edge.png">
                             <a href="#popup-ae" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
                         </div>
@@ -167,48 +162,48 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mix unity">
-                    <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/infinite_dungeon.png">
-                            <a href="#popup-id" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="portfolio__item__description">
-                            <h4 data-lang-key="p_id_title">Infinite Dungeon</h4>
-                            <p data-lang-key="p_id_desc">
-                                Unity와 C#을 사용하여 만든 3D 쿼터뷰 액션 게임입니다.
-                            </p>
-                        </div>
-                        <div class="portfolio__item__text">
-                            <h4 data-lang-key="p_id_title">Infinite Dungeon</h4>
-                            <ul>
-                                <li data-lang-key="p_id_tag1">Unity</li>
-                                <li data-lang-key="p_id_tag2">C#</li>
-                            </ul>
+    <section class="services spad">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="services__title text-center">
+                        <div class="section-title">
+                            <div class="section-title center-title">
+                                <h2 data-lang-key="passion_title">Beyond the game</h2>
+                            </div>
+                            <p data-lang-key="passion_text">게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의
+                                감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 게임 그래픽 렌더링 기술에
+                                많은 관심을 가지고 있으며, 실시간 렌더링 파이프라인과 GPU 기반 최적화를 직접 구현하며
+                                역량을 쌓고 있습니다. 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고,
+                                화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
+
+    <div id="popup-we" class="mfp-hide white-popup-block white-popup-block--wide">
+        <h2 data-lang-key="p_we_title">WestEngine</h2>
+        <img class="popup-image" src="img/bistro.png" alt="WestEngine Bistro scene">
+        <div class="popup-detail" data-lang-key="p_we_detail_desc">
+            <p>DirectX 12/Vulkan dual-backend rendering engine with a bindless RHI, render graph, GPU-driven rendering,
+                and deferred PBR pipeline.</p>
+        </div>
+    </div>
 
     <div id="popup-ap" class="mfp-hide white-popup-block">
         <h2 data-lang-key="p_ap_title">Arsenal</h2>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/H7mY3IWkGmY" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p data-lang-key="p_ap_detail_desc">
+        <div class="popup-detail" data-lang-key="p_ap_detail_desc">
             [Arsenal Project에 대한 자세한 설명을 여기에 작성합니다.]
-        </p>
-    </div>
-
-    <div id="popup-lw" class="mfp-hide white-popup-block">
-        <h2 data-lang-key="p_lw_title">Language World</h2>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/mPajRakaYSo" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p data-lang-key="p_lw_detail_desc">
-            [Language World에 대한 자세한 설명을 여기에 작성합니다.]
-        </p>
     </div>
 
     <div id="popup-ae" class="mfp-hide white-popup-block">
@@ -216,19 +211,9 @@
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/zFD2J6oJhNU" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p data-lang-key="p_ae_detail_desc">
+        <div class="popup-detail" data-lang-key="p_ae_detail_desc">
             [Arcane Edge에 대한 자세한 설명을 여기에 작성합니다.]
-        </p>
-    </div>
-
-    <div id="popup-id" class="mfp-hide white-popup-block">
-        <h2 data-lang-key="p_id_title">Infinite Dungeon</h2>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/Fj44CD9ayVc" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p data-lang-key="p_id_detail_desc">
-            [Infinite Dungeon에 대한 자세한 설명을 여기에 작성합니다.]
-        </p>
     </div>
     <footer class="footer">
         <div class="container">
@@ -238,18 +223,6 @@
                         <div class="footer__top__social">
                             <a href="https://github.com/WestMinsu"><i class="fa fa-github"></i></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__copyright">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p class="footer__copyright__text" data-lang-key="copyright_text">
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
                     </div>
                 </div>
             </div>

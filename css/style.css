@@ -2549,3 +2549,201 @@ section {
     font-size: 18px; 
     line-height: 1.7;
 }
+.render-focus {
+    margin-top: 15px;
+}
+
+.render-focus__item {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    min-height: 190px;
+    padding: 28px 22px 24px;
+    margin-bottom: 30px;
+}
+
+.render-focus__item i {
+    color: #00bfe7;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.render-focus__item h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.render-focus__item p {
+    color: #adadad;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.portfolio__item--featured .portfolio__item__video {
+    height: 360px;
+}
+
+.white-popup-block--wide {
+    max-width: 980px;
+}
+
+.popup-image {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.popup-detail ul {
+    margin-bottom: 18px;
+    padding-left: 20px;
+}
+
+.popup-detail li {
+    color: #adadad;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio__item--featured .portfolio__item__video {
+        height: 260px;
+    }
+
+    .render-focus__item {
+        min-height: 0;
+    }
+}
+.portfolio__gallery--stacked .portfolio__item {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+}
+
+.portfolio__gallery--stacked .portfolio__item__video {
+    height: 300px;
+}
+
+.portfolio__gallery--stacked .portfolio__item--featured .portfolio__item__video {
+    height: 380px;
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio__gallery--stacked .portfolio__item__video,
+    .portfolio__gallery--stacked .portfolio__item--featured .portfolio__item__video {
+        height: 240px;
+    }
+}
+.portfolio__gallery--stacked .portfolio__item--featured {
+    max-width: 980px;
+    border: 1px solid rgba(0, 191, 231, 0.28);
+    background: rgba(255, 255, 255, 0.035);
+    padding: 0 0 24px;
+}
+
+.portfolio__gallery--stacked .portfolio__item--featured .portfolio__item__text {
+    padding-top: 18px;
+}
+
+.render-focus--project {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 22px 0;
+}
+
+.render-focus--project .render-focus__item {
+    min-height: 150px;
+    margin-bottom: 0;
+    padding: 22px 18px 20px;
+}
+
+.render-focus--project .render-focus__item h4 {
+    font-size: 16px;
+}
+
+.render-focus--project .render-focus__item p {
+    font-size: 14px;
+}
+
+.portfolio__gallery--stacked .portfolio__item--secondary {
+    max-width: 700px;
+    opacity: 0.86;
+}
+
+.portfolio__gallery--stacked .portfolio__item--secondary .portfolio__item__video {
+    height: 220px;
+}
+
+.portfolio__gallery--stacked .portfolio__item--secondary .portfolio__item__text h4 {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+    .render-focus--project {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .render-focus--project {
+        grid-template-columns: 1fr;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .portfolio__gallery--stacked .portfolio__item--secondary .portfolio__item__video {
+        height: 210px;
+    }
+}
+.hero__item {
+    position: relative;
+}
+
+.hero__item:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(4, 7, 13, 0.76) 0%, rgba(4, 7, 13, 0.48) 42%, rgba(4, 7, 13, 0.12) 72%);
+    pointer-events: none;
+}
+
+.hero__item .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__text {
+    max-width: 560px;
+    padding: 34px 38px 30px;
+    background: rgba(5, 9, 16, 0.72);
+    border-left: 4px solid #00bfe7;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(3px);
+}
+
+.hero__text span {
+    color: #70e6ff;
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+.hero__text h2 {
+    margin-bottom: 0;
+    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.78);
+}
+
+@media only screen and (max-width: 767px) {
+    .hero__item:before {
+        background: rgba(4, 7, 13, 0.62);
+    }
+
+    .hero__text {
+        padding: 28px 26px 24px;
+        max-width: 100%;
+    }
+}
