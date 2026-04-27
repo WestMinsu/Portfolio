@@ -2747,3 +2747,36 @@ section {
         max-width: 100%;
     }
 }
+.portfolio__gallery--stacked .portfolio__item {
+    margin-bottom: 68px;
+}
+
+.portfolio__gallery--stacked > div:last-child .portfolio__item {
+    margin-bottom: 18px;
+}
+
+.portfolio.spad {
+    padding-bottom: 28px;
+}
+
+.portfolio + .services.spad {
+    padding-top: 34px;
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio__gallery--stacked .portfolio__item {
+        margin-bottom: 48px;
+    }
+
+    .portfolio__gallery--stacked > div:last-child .portfolio__item {
+        margin-bottom: 8px;
+    }
+
+    .portfolio.spad {
+        padding-bottom: 18px;
+    }
+
+    .portfolio + .services.spad {
+        padding-top: 26px;
+    }
+}
