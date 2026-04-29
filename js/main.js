@@ -95,6 +95,7 @@
             p_we_tag1: "DirectX 12",
             p_we_tag2: "Vulkan",
             p_we_tag3: "C++ / Slang",
+            p_we_period: "개발 기간: 2026-02-28 ~ 2026-04-27",
             p_we_detail_desc: `
         <p>WestEngine은 DirectX 12와 Vulkan 듀얼 백엔드를 하나의 RHI(Rendering Hardware Interface)로 추상화한 실시간 렌더링 엔진입니다. Amazon Lumberyard Bistro(약 2.84M triangles) 씬을 DX12와 Vulkan 모두 동일한 렌더링 코드로 구동하며, 백엔드가 바뀌어도 상위 파이프라인 코드는 수정 없이 동작합니다.</p>
         <h4><strong>핵심 구현</strong></h4>
@@ -103,14 +104,16 @@
             <li><strong>Bindless 모델:</strong> 엔진 전체가 하나의 Global Root Signature / Descriptor Set Layout을 공유하며, 셰이더에는 BindlessIndex만 넘깁니다.</li>
             <li><strong>Render Graph:</strong> 각 Pass가 읽고 쓰는 리소스를 등록하면 컴파일러가 barrier, transition, transient resource aliasing을 자동으로 삽입합니다.</li>
             <li><strong>GPU-Driven 렌더링:</strong> Compute culling 결과를 indirect arguments buffer에 기록한 뒤, ExecuteIndirect(DX12) / DrawIndexedIndirectCount(Vulkan)로 GPU가 직접 draw call을 수행합니다.</li>
-            <li><strong>Deferred PBR:</strong> GBuffer -> Shadow -> SSAO -> Deferred Lighting(IBL 포함) -> Bokeh DOF -> Tone Mapping -> 색 보정 후처리 스택으로 구성했습니다.</li>
-            <li><strong>셰이더 파이프라인:</strong> Slang으로 하나의 소스에서 DXIL과 SPIR-V를 오프라인 생성하고, CMake depfile로 증분 빌드를 관리합니다.</li>
+            <li><strong>Deferred PBR:</strong> GBuffer -> Shadow -> SSAO -> Deferred Lighting(IBL 포함) -> Bokeh DOF -> Tone Mapping -> Color Grading까지 이어지는 렌더링 파이프라인을 구현했습니다.</li>
+            <li><strong>셰이더 파이프라인:</strong> Slang으로 하나의 셰이더 소스에서 DXIL과 SPIR-V를 오프라인 생성하고, CMake depfile을 사용해 변경된 셰이더만 다시 빌드되도록 했습니다.</li>
         </ul>
         <h4><strong>성능 측정</strong></h4>
         <ul>
-            <li>Bistro의 mesh/instance 22,396개를 material + transform 기준으로 128개 draw unit으로 병합</li>
-            <li>Release 빌드, RTX 3060, 1920x1061 기준 - DX12 272.3 FPS / Vulkan 279.4 FPS (median)</li>
-            <li>Texture cache + batch upload + 1024px texture cap 적용 후 로딩 시간 - DX12 1,162 ms / Vulkan 997 ms</li>
+            <li>Bistro의 mesh/instance 22,396개를 material + transform 기준으로 128개 merged draw unit으로 압축했습니다.</li>
+            <li>Bistro 로딩 시간은 캐시/배치 OFF 기준 DX12 31,185 ms / Vulkan 31,013 ms에서, Texture Cache + Batch Upload + 1024px texture cap 적용 후 DX12 1,162 ms / Vulkan 997 ms로 단축했습니다.</li>
+            <li>Runtime 측정은 Release 빌드, RTX 3060, 1920x1080 client area, Validation/GPU crash diagnostics/VSync OFF, warm-up 120 frames 이후 600 frames 측정, 3회 반복 median 기준입니다.</li>
+            <li>최종 Optimized Path는 DX12 266.4 FPS(CPU Avg 3.754 ms / GPU Avg 3.714 ms), Vulkan 295.1 FPS(CPU Avg 3.389 ms / GPU Avg 3.356 ms)를 기록했습니다.</li>
+            <li>Baseline 대비 DX12는 FPS +52.8%, Vulkan은 FPS +54.4% 개선되었습니다.</li>
         </ul>
         <br>
         <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Github로 이동</a>
@@ -119,6 +122,7 @@
             p_ap_tag1: "Unreal Engine",
             p_ap_tag2: "C++",
             p_ap_desc: "언리얼 엔진 5를 사용하여 개발한 메카 소녀 FPS 게임입니다. 게임 시작 전 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.",
+            p_ap_period: "개발 기간: 2025-08-25 ~ 2025-12-22",
             p_ap_detail_desc: `
         <p>메카 소녀 FPS 게임입니다. 게임 시작 전 무기, 방어구, 장비 등으로 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치(가격)가 소모되며 이 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다. 2인 팀의 팀원으로 참가하여 언리얼의 Dedicated Server와 Replication system에 대해 이해하며 데이터 저장 시스템 구현, 인게임 UI 구현, 포스트 프로세싱 효과 구현, Chaos Destruction을 활용한 부서지는 물체 구현 등을 담당했습니다.</p>
         <h4><strong>주요 구현 내용</strong></h4>
@@ -153,7 +157,8 @@
         <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">Github로 이동</a>
     `,
             p_ae_title: "Arcane Edge",
-            p_ae_tag1: "C++ Project"
+            p_ae_tag1: "C++ Project",
+            p_ae_period: "개발 기간: 2025-06-09 ~ 2025-07-18"
         },
         en: {
             nav_home: "Home",
@@ -179,6 +184,7 @@
             p_we_tag1: "DirectX 12",
             p_we_tag2: "Vulkan",
             p_we_tag3: "C++ / Slang",
+            p_we_period: "Development period: 2026-02-28 ~ 2026-04-27",
             p_we_detail_desc: `
         <p>WestEngine is a real-time rendering engine that abstracts DirectX 12 and Vulkan behind a single RHI. It runs the Amazon Lumberyard Bistro scene, about 2.84M triangles, through the same high-level rendering path while keeping backend-specific API details out of the renderer.</p>
         <h4><strong>Core Implementation</strong></h4>
@@ -193,8 +199,10 @@
         <h4><strong>Measured Results</strong></h4>
         <ul>
             <li>22,396 Bistro mesh/instance units are merged into 128 material + transform draw units.</li>
-            <li>Release build, RTX 3060, 1920x1061: 272.3 FPS on DX12 and 279.4 FPS on Vulkan median.</li>
-            <li>Texture cache, batch upload, and a 1024px material texture cap reduced Bistro load time to 1,162 ms on DX12 and 997 ms on Vulkan.</li>
+            <li>Bistro load time was reduced from 31,185 ms on DX12 and 31,013 ms on Vulkan with cache/batch disabled to 1,162 ms on DX12 and 997 ms on Vulkan after texture cache, batch upload, and a 1024px material texture cap.</li>
+            <li>Runtime was measured in Release on an RTX 3060 at a 1920x1080 client area with validation, GPU crash diagnostics, and VSync disabled, using the median of three 600-frame runs after 120 warm-up frames.</li>
+            <li>The final optimized path reached 266.4 FPS on DX12 (CPU Avg 3.754 ms / GPU Avg 3.714 ms) and 295.1 FPS on Vulkan (CPU Avg 3.389 ms / GPU Avg 3.356 ms).</li>
+            <li>Compared with baseline, FPS improved by 52.8% on DX12 and 54.4% on Vulkan.</li>
         </ul>
         <br>
         <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Go to Github</a>
@@ -203,6 +211,7 @@
             p_ap_tag1: "Unreal Engine",
             p_ap_tag2: "C++",
             p_ap_desc: "A mech-girl FPS built with Unreal Engine 5. I worked on gameplay support systems including AI, player data storage, UI, destruction, and post-processing feedback.",
+            p_ap_period: "Development period: 2025-08-25 ~ 2025-12-22",
             p_ap_detail_desc: `
         <p>Arsenal is a mech-girl FPS built with Unreal Engine 5. As one of two programmers, I worked with dedicated server and replication concepts while implementing player data storage, in-game UI, post-processing feedback, AI behavior, and destructible objects.</p>
         <h4><strong>Key Implementation Details</strong></h4>
@@ -216,6 +225,7 @@
             p_ae_title: "Arcane Edge",
             p_ae_tag1: "C++ Project",
             p_ae_desc: "A C++ based 2D side-scrolling run-and-gun game where you switch weapons based on enemy attributes.",
+            p_ae_period: "Development period: 2025-06-09 ~ 2025-07-18",
             p_ae_detail_desc: `
         <p>A 2D side-scrolling run-and-gun game where players must clear stages by switching weapons according to enemy attributes. Built the fundamental game systems from the ground up using C++ to solidify programming basics.</p>
         <h4><strong>Key Implementation Details:</strong></h4>
@@ -286,6 +296,36 @@
     $('.portfolio__item__video').on('click', function () {
         $(this).find('a.popup-with-content').trigger('click');
     });
+
+    $('.portfolio-popup-card')
+        .css('cursor', 'pointer')
+        .on('click', function (e) {
+            if ($(e.target).closest('a, button, iframe, .portfolio__item__video').length) {
+                return;
+            }
+
+            $.magnificPopup.open({
+                items: {
+                    src: $(this).data('popup-target')
+                },
+                type: 'inline',
+                midClick: true
+            });
+        })
+        .on('keydown', function (e) {
+            if (e.target !== this || (e.key !== 'Enter' && e.key !== ' ')) {
+                return;
+            }
+
+            e.preventDefault();
+            $.magnificPopup.open({
+                items: {
+                    src: $(this).data('popup-target')
+                },
+                type: 'inline',
+                midClick: true
+            });
+        });
 
     $('a.popup-with-content').on('click', function (e) {
         e.stopPropagation();

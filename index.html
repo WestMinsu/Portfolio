@@ -80,7 +80,9 @@
             <div class="row portfolio__gallery portfolio__gallery--stacked">
 
                 <div class="col-lg-12 col-md-12 col-sm-12 mix rendering cpp">
-                    <div class="portfolio__item portfolio__item--featured">
+                    <div class="portfolio__item portfolio__item--featured portfolio-popup-card"
+                        data-popup-target="#popup-we" role="button" tabindex="0"
+                        aria-label="Open WestEngine details">
                         <div class="portfolio__item__video set-bg" data-setbg="img/bistro.png">
                             <a href="#popup-we" class="play-btn popup-with-content"><i class="fa fa-search"></i></a>
                         </div>
@@ -100,34 +102,40 @@
                             </ul>
                         </div>
                         <div class="render-focus render-focus--project">
-                            <div class="render-focus__item">
+                            <a href="#popup-we" class="render-focus__item popup-with-content"
+                                aria-label="Open WestEngine details">
                                 <i class="fa fa-sitemap"></i>
                                 <h4 data-lang-key="focus_rhi_title">Unified RHI</h4>
                                 <p data-lang-key="focus_rhi_text">One renderer path over DX12 and Vulkan backends.</p>
-                            </div>
-                            <div class="render-focus__item">
+                            </a>
+                            <a href="#popup-we" class="render-focus__item popup-with-content"
+                                aria-label="Open WestEngine details">
                                 <i class="fa fa-database"></i>
                                 <h4 data-lang-key="focus_bindless_title">Bindless</h4>
                                 <p data-lang-key="focus_bindless_text">Resources are accessed by index through one
                                     global descriptor model.</p>
-                            </div>
-                            <div class="render-focus__item">
+                            </a>
+                            <a href="#popup-we" class="render-focus__item popup-with-content"
+                                aria-label="Open WestEngine details">
                                 <i class="fa fa-random"></i>
                                 <h4 data-lang-key="focus_graph_title">Render Graph</h4>
                                 <p data-lang-key="focus_graph_text">Pass intent drives barriers, transitions, and
                                     aliasing.</p>
-                            </div>
-                            <div class="render-focus__item">
+                            </a>
+                            <a href="#popup-we" class="render-focus__item popup-with-content"
+                                aria-label="Open WestEngine details">
                                 <i class="fa fa-microchip"></i>
                                 <h4 data-lang-key="focus_gpu_title">GPU-Driven</h4>
                                 <p data-lang-key="focus_gpu_text">Compute culling feeds indirect draw submission.</p>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 mix unreal">
-                    <div class="portfolio__item portfolio__item--secondary">
+                    <div class="portfolio__item portfolio__item--secondary portfolio-popup-card"
+                        data-popup-target="#popup-ap" role="button" tabindex="0"
+                        aria-label="Open Arsenal details">
                         <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arsenal.png">
                             <a href="#popup-ap" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
                         </div>
@@ -148,7 +156,9 @@
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 mix cpp">
-                    <div class="portfolio__item portfolio__item--secondary">
+                    <div class="portfolio__item portfolio__item--secondary portfolio-popup-card"
+                        data-popup-target="#popup-ae" role="button" tabindex="0"
+                        aria-label="Open Arcane Edge details">
                         <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arcane_edge.png">
                             <a href="#popup-ae" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
                         </div>
@@ -191,6 +201,7 @@
 
     <div id="popup-we" class="mfp-hide white-popup-block white-popup-block--wide">
         <h2 data-lang-key="p_we_title">WestEngine</h2>
+        <p data-lang-key="p_we_period">Development period: 2026-02-28 ~ 2026-04-27</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/c6qrl-4vMc0" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -203,6 +214,7 @@
 
     <div id="popup-ap" class="mfp-hide white-popup-block">
         <h2 data-lang-key="p_ap_title">Arsenal</h2>
+        <p data-lang-key="p_ap_period">Development period: 2025-08-25 ~ 2025-12-22</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/H7mY3IWkGmY" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -213,6 +225,7 @@
 
     <div id="popup-ae" class="mfp-hide white-popup-block">
         <h2 data-lang-key="p_ae_title">Arcane Edge</h2>
+        <p data-lang-key="p_ae_period">Development period: 2025-06-09 ~ 2025-07-18</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/zFD2J6oJhNU" frameborder="0" allowfullscreen></iframe>
         </div>
