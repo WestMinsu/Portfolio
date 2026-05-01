@@ -115,8 +115,10 @@
             <li>최종 Optimized Path는 DX12 266.4 FPS(CPU Avg 3.754 ms / GPU Avg 3.714 ms), Vulkan 295.1 FPS(CPU Avg 3.389 ms / GPU Avg 3.356 ms)를 기록했습니다.</li>
             <li>Baseline 대비 DX12는 FPS +52.8%, Vulkan은 FPS +54.4% 개선되었습니다.</li>
         </ul>
-        <br>
-        <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Github로 이동</a>
+        <div class="popup-actions">
+            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Github로 이동</a>
+            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" class="primary-btn">보충 자료 보기</a>
+        </div>
     `,
             p_ap_title: "Arsenal",
             p_ap_tag1: "Unreal Engine",
@@ -204,8 +206,10 @@
             <li>The final optimized path reached 266.4 FPS on DX12 (CPU Avg 3.754 ms / GPU Avg 3.714 ms) and 295.1 FPS on Vulkan (CPU Avg 3.389 ms / GPU Avg 3.356 ms).</li>
             <li>Compared with baseline, FPS improved by 52.8% on DX12 and 54.4% on Vulkan.</li>
         </ul>
-        <br>
-        <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Go to Github</a>
+        <div class="popup-actions">
+            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Go to Github</a>
+            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" class="primary-btn">View Supplement</a>
+        </div>
     `,
             p_ap_title: "Arsenal",
             p_ap_tag1: "Unreal Engine",
