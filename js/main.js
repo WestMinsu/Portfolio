@@ -143,6 +143,9 @@
             </li>
             <li><strong>포스트 프로세싱 효과</strong><br> 플레이어 캐릭터의 체력 상태에 따라 화면 전체에 붉은색 외곽선 효과가 강해지는 포스트 프로세싱 머티리얼을 구현하고 카메라에 적용하여 시각적인 피드백을 강화했습니다.</li><br>
         </ul>
+        <div class="popup-actions">
+            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" class="primary-btn">보충 자료 보기</a>
+        </div>
     `,
 
             p_ae_desc: "적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.",
@@ -225,6 +228,9 @@
             <li><strong>In-game UI:</strong> Built kill-cam, scoreboard, kill log, round summary, and hit marker UI systems.</li>
             <li><strong>Visual feedback:</strong> Added health-based post-processing and Chaos Destruction objects that break when shot.</li>
         </ul>
+        <div class="popup-actions">
+            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" class="primary-btn">View Supplement</a>
+        </div>
     `,
             p_ae_title: "Arcane Edge",
             p_ae_tag1: "C++ Project",
