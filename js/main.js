@@ -1,95 +1,15 @@
-﻿'use strict';
+'use strict';
 
 (function ($) {
-
-    /*------------------
-        Preloader
-    --------------------*/
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-
-        // Set default language after preloader is done
-        setLanguage('ko');
-    });
-
-    /*------------------
-        Background Set
-    --------------------*/
-    $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
-    });
-
-    /*------------------
-        Navigation
-    --------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
-
-    /*------------------
-        Hero Slider
-    --------------------*/
-    $(".hero__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: false,
-        nav: true,
-        navText: ["<span class='arrow_left'><img src='img/arrow-left.png' alt=''></span>", "<span class='arrow_right'><img src='img/arrow-right.png' alt=''></span>"],
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-    });
-
-    /*------------------
-        Video Popup
-    --------------------*/
-    $('.popup-with-content').magnificPopup({
-        type: 'inline',
-        midClick: true
-    });
-
-    /*------------------
-        Portfolio Filter
-    --------------------*/
-    $('.portfolio__filter li').on('click', function () {
-        $('.portfolio__filter li').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    if ($('.portfolio__gallery').length > 0) {
-        var containerEl = document.querySelector('.portfolio__gallery');
-        var mixer = mixitup(containerEl);
-    }
-
-    /*------------------
-        Language Switcher
-    --------------------*/
     const translations = {
         ko: {
             nav_home: "홈",
             nav_portfolio: "포트폴리오",
-            nav_pages: "페이지",
-            nav_dropdown_portfolio: "포트폴리오",
-            nav_contact: "연락처",
-            hero_role: "렌더링 프로그래머",
+            hero_role: "게임 프로그래머",
             hero_name: "서민수",
             passion_title: "Beyond the game",
-            passion_text: "게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 게임 그래픽 렌더링 기술에 많은 관심을 가지고 있으며, 실시간 렌더링 파이프라인과 GPU 기반 최적화를 직접 구현하며 역량을 쌓고 있습니다. 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고, 화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다.",
+            passion_text: "게임은 단순한 시간 때우기용 매체가 아닙니다. 플레이어의 선택과 상호작용을 통해 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다.<br><br>C++과 Unreal Engine을 활용해 여러 게임 프로젝트를 진행했고, DirectX 12 · Vulkan 기반 렌더링 엔진과 DXR Path Tracer도 직접 구현하며 엔진 구조에 대한 이해도 넓혔습니다. 게임의 기능을 구현하는 데 그치지 않고, 그 기능이 어떤 구조에서 동작하는지 이해하고 성능까지 개선할 수 있는 게임 프로그래머가 되고자 합니다. 궁극적으로는 이러한 기술적 이해를 바탕으로 플레이어가 오랫동안 지내고 싶은 게임 속 세상을 만들고 싶습니다.",
             portfolio_page_title: "주요 프로젝트",
-            focus_rhi_title: "공통 RHI",
-            focus_rhi_text: "DX12와 Vulkan을 하나의 RHI로 추상화하여 동일한 렌더링 코드로 양쪽 백엔드를 구동합니다.",
-            focus_bindless_title: "Bindless",
-            focus_bindless_text: "단일 Global Descriptor로 모든 리소스에 인덱스로 접근합니다.",
-            focus_graph_title: "Render Graph",
-            focus_graph_text: "렌더링 순서와 GPU 동기화를 프레임마다 자동으로 결정합니다.",
-            focus_gpu_title: "GPU-Driven",
-            focus_gpu_text: "Compute culling으로 가시성을 판별하고, 결과를 indirect draw로 한 번에 처리합니다.",
             p_we_title: "WestEngine",
             p_we_desc: "DirectX 12/Vulkan 듀얼 백엔드 RHI, Bindless 리소스 모델, Render Graph, GPU-driven 렌더링, Deferred PBR 파이프라인을 구현한 렌더링 엔진입니다.",
             p_we_tag1: "DirectX 12",
@@ -116,8 +36,8 @@
             <li>Baseline 대비 DX12는 FPS +52.8%, Vulkan은 FPS +54.4% 개선되었습니다.</li>
         </ul>
         <div class="popup-actions">
-            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Github로 이동</a>
-            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" class="primary-btn">보충 자료 보기</a>
+            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" rel="noopener noreferrer" class="primary-btn">Github로 이동</a>
+            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="primary-btn">보충 자료 보기</a>
         </div>
     `,
             p_ap_title: "Arsenal",
@@ -144,11 +64,13 @@
             <li><strong>포스트 프로세싱 효과</strong><br> 플레이어 캐릭터의 체력 상태에 따라 화면 전체에 붉은색 외곽선 효과가 강해지는 포스트 프로세싱 머티리얼을 구현하고 카메라에 적용하여 시각적인 피드백을 강화했습니다.</li><br>
         </ul>
         <div class="popup-actions">
-            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" class="primary-btn">보충 자료 보기</a>
+            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="primary-btn">보충 자료 보기</a>
         </div>
     `,
-
+            p_ae_title: "Arcane Edge",
+            p_ae_tag1: "C++ Project",
             p_ae_desc: "적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.",
+            p_ae_period: "개발 기간: 2025-06-09 ~ 2025-07-18",
             p_ae_detail_desc: `
         <p>적의 속성에 따라 무기를 변경하며 스테이지를 돌파하는 2D 횡스크롤 런앤건 게임입니다. 2인 팀의 팀장을 맡아 C++을 기반으로 대부분의 게임 시스템을 직접 구현하며 프로그래밍의 기초를 다졌습니다.</p>
         <h4><strong>주요 구현 내용</strong></h4>
@@ -159,31 +81,42 @@
             <li><strong>핵심 시스템 개발</strong><br> 플레이어의 정교한 이동 및 점프를 구현하며 중력 가속도 등 간단한 물리 지식을 사용했습니다. 또한 공격 로직, UI, 점수 저장 및 불러오기 등 게임의 핵심 기능들을 구현했습니다.</li><br>
         </ul>
         <br>
-        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">Github로 이동</a>
+        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" rel="noopener noreferrer" class="primary-btn">Github로 이동</a>
     `,
-            p_ae_title: "Arcane Edge",
-            p_ae_tag1: "C++ Project",
-            p_ae_period: "개발 기간: 2025-06-09 ~ 2025-07-18"
+            p_dxr_title: "DXR Path Tracer",
+            p_dxr_desc: "DirectX 12와 DirectX Raytracing(DXR)을 이용해 구현한 실시간 Path Tracer 프로젝트입니다.",
+            p_dxr_tag1: "C++",
+            p_dxr_tag2: "DirectX 12 / DXR",
+            p_dxr_tag3: "HLSL",
+            p_dxr_period: "개발 기간: 2026-07-02 ~ 2026-08-20",
+            p_dxr_detail_desc: `
+        <p>DirectX 12와 DirectX Raytracing(DXR)을 이용해 구현한 실시간 Path Tracer 프로젝트입니다.</p>
+        <p>기본적인 Path Tracing부터 광원 샘플링, Temporal Reconstruction, Denoising, 동적 장면 및 애니메이션 지원, GPU 성능 최적화까지 실시간 Path Tracing에 필요한 주요 기능들을 구현했습니다.</p>
+        <h4><strong>주요 기능</strong></h4>
+        <ul>
+            <li><strong>Path Tracing:</strong> PBR 기반 Path Tracing, Multi-Bounce, Next Event Estimation(NEE), Multiple Importance Sampling(MIS), GGX 기반 BRDF Sampling을 구현했습니다.</li>
+            <li><strong>Temporal Reconstruction & Denoising:</strong> Temporal Reprojection, History Accumulation, History Validation 및 Rejection, Disocclusion 처리, À-Trous Edge-Aware Filtering을 구현했습니다.</li>
+            <li><strong>Dynamic Scene:</strong> glTF Scene Loading, Node Hierarchy 및 Animation 재생, Skeletal Animation 및 GPU Skinning, 동적 BLAS/TLAS 갱신을 지원합니다.</li>
+            <li><strong>Performance:</strong> GPU Timestamp 기반 Profiling, Render Pass별 GPU 실행 시간 측정, Ray Count Profiling을 구현하고 Sampling 및 Shader 연산을 최적화했습니다.</li>
+        </ul>
+        <h4><strong>프로젝트 목표</strong></h4>
+        <p>이 프로젝트는 제한된 Ray Budget에서 실시간으로 높은 품질의 결과를 얻기 위해 발생하는 문제를 직접 다루는 것을 목표로 진행했습니다.</p>
+        <p>낮은 SPP에서 발생하는 Noise를 줄이기 위해 Temporal 및 Spatial 정보를 재사용하고, 동적 장면에서는 Motion, Disocclusion, 잘못된 History 재사용으로 발생하는 문제를 개선하는 데 중점을 두었습니다.</p>
+        <p>또한 GPU Profiling을 기반으로 병목을 분석하고 Sampling 및 Shader 연산을 최적화하여 품질과 성능의 균형을 개선했습니다.</p>
+        <div class="popup-actions">
+            <a href="https://github.com/WestMinsu/DXRPathTracer" target="_blank" rel="noopener noreferrer" class="primary-btn">Github로 이동</a>
+            <a href="https://docs.google.com/presentation/d/1keFYBMjvVncv6uWTItFLHaQFvMc9q5Wt/edit?usp=sharing&amp;ouid=109210938873417662565&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" class="primary-btn">보충 자료 보기</a>
+        </div>
+    `
         },
         en: {
             nav_home: "Home",
             nav_portfolio: "Portfolio",
-            nav_pages: "Pages",
-            nav_dropdown_portfolio: "Portfolio",
-            nav_contact: "Contact",
-            hero_role: "Rendering Programmer",
+            hero_role: "Game Programmer",
             hero_name: "Minsu Seo",
             passion_title: "Beyond the game",
-            passion_text: "I see games as a medium that can deliver emotion and engagement beyond simple entertainment. That is why I am especially interested in game graphics rendering, and I have been building my skills by implementing real-time rendering pipelines and GPU-oriented optimization in WestEngine. I want to use advanced rendering techniques to create believable environments, expressive characters, and visually compelling game experiences.",
+            passion_text: "Games are not simply a way to pass the time. Through player choice and interaction, they can deliver moving and enjoyable experiences beyond what films or television dramas can offer.<br><br>I have worked on several game projects using C++ and Unreal Engine, and broadened my understanding of engine architecture by building a DirectX 12/Vulkan rendering engine and a DXR Path Tracer. I want to become a game programmer who not only implements features, but also understands the structures they run on and can improve their performance. Ultimately, I want to use this technical understanding to create game worlds that players want to spend a long time in.",
             portfolio_page_title: "Featured Projects",
-            focus_rhi_title: "Unified RHI",
-            focus_rhi_text: "DX12 and Vulkan differences stay behind one renderer-facing interface.",
-            focus_bindless_title: "Bindless",
-            focus_bindless_text: "Resources are accessed by index through one global descriptor model.",
-            focus_graph_title: "Render Graph",
-            focus_graph_text: "Pass intent resolves barriers, transitions, and aliasing.",
-            focus_gpu_title: "GPU-Driven",
-            focus_gpu_text: "Compute culling feeds indirect draw submission.",
             p_we_title: "WestEngine",
             p_we_desc: "A DirectX 12/Vulkan dual-backend rendering engine with a bindless RHI, render graph, GPU-driven rendering, and deferred PBR pipeline.",
             p_we_tag1: "DirectX 12",
@@ -210,8 +143,8 @@
             <li>Compared with baseline, FPS improved by 52.8% on DX12 and 54.4% on Vulkan.</li>
         </ul>
         <div class="popup-actions">
-            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" class="primary-btn">Go to Github</a>
-            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" class="primary-btn">View Supplement</a>
+            <a href="https://github.com/WestMinsu/WestEngine" target="_blank" rel="noopener noreferrer" class="primary-btn">Go to Github</a>
+            <a href="https://docs.google.com/presentation/d/1tfTBp06uEOTYr-qzJ8vhQBhm_r3lKSVhpbtk1gBXgyM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="primary-btn">View Supplement</a>
         </div>
     `,
             p_ap_title: "Arsenal",
@@ -229,7 +162,7 @@
             <li><strong>Visual feedback:</strong> Added health-based post-processing and Chaos Destruction objects that break when shot.</li>
         </ul>
         <div class="popup-actions">
-            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" class="primary-btn">View Supplement</a>
+            <a href="https://docs.google.com/presentation/d/1yZsZeYJFwOTjlPvKiAltvWKLt1vtqmbnY4EUfR6feYA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="primary-btn">View Supplement</a>
         </div>
     `,
             p_ae_title: "Arcane Edge",
@@ -246,57 +179,110 @@
             <li><strong>Core Systems Development:</strong> Implemented core game features, including precise player movement and attack logic, UI, and a score saving/loading system.</li>
         </ul>
         <br>
-        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" class="primary-btn">Go to Github</a>
+        <a href="https://github.com/WestMinsu/AlphaEngineProject" target="_blank" rel="noopener noreferrer" class="primary-btn">Go to Github</a>
+    `,
+            p_dxr_title: "DXR Path Tracer",
+            p_dxr_desc: "A real-time path tracer implemented with DirectX 12 and DirectX Raytracing (DXR).",
+            p_dxr_tag1: "C++",
+            p_dxr_tag2: "DirectX 12 / DXR",
+            p_dxr_tag3: "HLSL",
+            p_dxr_period: "Development period: 2026-07-02 ~ 2026-08-20",
+            p_dxr_detail_desc: `
+        <p>A real-time Path Tracer implemented with DirectX 12 and DirectX Raytracing (DXR).</p>
+        <p>The project implements the main features required for real-time path tracing, including light sampling, temporal reconstruction, denoising, dynamic scenes and animation, and GPU performance optimization.</p>
+        <h4><strong>Main Features</strong></h4>
+        <ul>
+            <li><strong>Path Tracing:</strong> PBR path tracing, multi-bounce, Next Event Estimation (NEE), Multiple Importance Sampling (MIS), and GGX BRDF sampling.</li>
+            <li><strong>Temporal Reconstruction & Denoising:</strong> Temporal reprojection, history accumulation and rejection, disocclusion handling, and À-Trous edge-aware filtering.</li>
+            <li><strong>Dynamic Scene:</strong> glTF scene loading, node hierarchy and animation playback, skeletal animation, GPU skinning, and dynamic BLAS/TLAS updates.</li>
+            <li><strong>Performance:</strong> GPU timestamp profiling, per-pass GPU time measurement, ray count profiling, and sampling and shader optimization.</li>
+        </ul>
+        <h4><strong>Project Goal</strong></h4>
+        <p>The goal of this project was to address the problems that arise when producing high-quality real-time results with a limited ray budget.</p>
+        <p>Temporal and spatial information is reused to reduce noise at low SPP, while motion, disocclusion, and invalid history reuse are handled for dynamic scenes.</p>
+        <p>GPU profiling was used to analyze bottlenecks and improve the balance between quality and performance.</p>
+        <div class="popup-actions">
+            <a href="https://github.com/WestMinsu/DXRPathTracer" target="_blank" rel="noopener noreferrer" class="primary-btn">Go to Github</a>
+            <a href="https://docs.google.com/presentation/d/1keFYBMjvVncv6uWTItFLHaQFvMc9q5Wt/edit?usp=sharing&amp;ouid=109210938873417662565&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" class="primary-btn">View Supplement</a>
+        </div>
     `
         }
     };
 
     const setLanguage = (lang) => {
-        // 텍스트 변경
-        document.querySelectorAll('[data-lang-key]').forEach(elem => {
-            const key = elem.getAttribute('data-lang-key');
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-lang-key]').forEach((element) => {
+            const key = element.getAttribute('data-lang-key');
             if (translations[lang] && translations[lang][key]) {
-                elem.innerHTML = translations[lang][key];
+                element.innerHTML = translations[lang][key];
             }
         });
 
-        // 'active' 클래스를 올바른 li 태그에 적용 (이 부분은 그대로 유지)
-        if (lang === 'ko') {
-            $('#lang-menu-ko').addClass('active');
-            $('#lang-menu-en').removeClass('active');
-        } else {
-            $('#lang-menu-en').addClass('active');
-            $('#lang-menu-ko').removeClass('active');
-        }
+        $('#lang-menu-ko').toggleClass('active', lang === 'ko');
+        $('#lang-menu-en').toggleClass('active', lang === 'en');
     };
 
-    // KO 메뉴 클릭 이벤트
-    $('#lang-menu-ko').on('click', function (e) {
-        e.preventDefault();
+    $(window).on('load', function () {
+        $('.loader').fadeOut();
+        $('#preloder').delay(200).fadeOut('slow');
         setLanguage('ko');
     });
 
-    // EN 메뉴 클릭 이벤트
-    $('#lang-menu-en').on('click', function (e) {
-        e.preventDefault();
+    $('.set-bg').each(function () {
+        const background = $(this).data('setbg');
+        $(this).css('background-image', 'url(' + background + ')');
+    });
+
+    $('.mobile-menu').slicknav({
+        prependTo: '#mobile-menu-wrap',
+        allowParentLinks: true
+    });
+
+    $('.hero__slider').owlCarousel({
+        loop: false,
+        margin: 0,
+        items: 1,
+        dots: false,
+        nav: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: false,
+        autoplay: false
+    });
+
+    $('.popup-with-content').magnificPopup({
+        type: 'inline',
+        midClick: true
+    });
+
+    $('#lang-menu-ko').on('click', function (event) {
+        event.preventDefault();
+        setLanguage('ko');
+    });
+
+    $('#lang-menu-en').on('click', function (event) {
+        event.preventDefault();
         setLanguage('en');
     });
 
-    $('.header__nav__menu a[href*="#"], .scroll-btn[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        var target = $(this.hash);
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 80
-            }, 800);
+    $('.nav-item a[href^="#"], .scroll-btn[href^="#"]').on('click', function (event) {
+        const target = $(this.hash);
+        if (!target.length) {
+            return;
         }
+
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top - 80
+        }, 800);
     });
 
     $(window).on('scroll', function () {
-        var scrollDistance = $(window).scrollTop();
-        $('section').each(function () {
-            if ($(this).position().top <= scrollDistance + 100) {
-                var sectionId = $(this).attr('id');
+        const scrollDistance = $(window).scrollTop();
+        $('main section[id]').each(function () {
+            if ($(this).position().top <= scrollDistance + 120) {
+                const sectionId = $(this).attr('id');
                 $('.header__nav__menu .nav-item.active').removeClass('active');
                 $('.header__nav__menu .nav-item a[href="#' + sectionId + '"]').closest('li').addClass('active');
             }
@@ -309,35 +295,31 @@
 
     $('.portfolio-popup-card')
         .css('cursor', 'pointer')
-        .on('click', function (e) {
-            if ($(e.target).closest('a, button, iframe, .portfolio__item__video').length) {
+        .on('click', function (event) {
+            if ($(event.target).closest('a, button, iframe, .portfolio__item__video').length) {
                 return;
             }
 
             $.magnificPopup.open({
-                items: {
-                    src: $(this).data('popup-target')
-                },
+                items: { src: $(this).data('popup-target') },
                 type: 'inline',
                 midClick: true
             });
         })
-        .on('keydown', function (e) {
-            if (e.target !== this || (e.key !== 'Enter' && e.key !== ' ')) {
+        .on('keydown', function (event) {
+            if (event.target !== this || (event.key !== 'Enter' && event.key !== ' ')) {
                 return;
             }
 
-            e.preventDefault();
+            event.preventDefault();
             $.magnificPopup.open({
-                items: {
-                    src: $(this).data('popup-target')
-                },
+                items: { src: $(this).data('popup-target') },
                 type: 'inline',
                 midClick: true
             });
         });
 
-    $('a.popup-with-content').on('click', function (e) {
-        e.stopPropagation();
+    $('a.popup-with-content').on('click', function (event) {
+        event.stopPropagation();
     });
 })(jQuery);

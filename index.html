@@ -3,16 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Minsu Seo rendering intern portfolio focused on WestEngine.">
-    <meta name="keywords" content="rendering programmer, DirectX 12, Vulkan, C++, WestEngine, portfolio">
+    <meta name="description" content="C++ 게임 시스템, Unreal Engine 멀티플레이, 엔진 개발 경험을 담은 서민수의 게임 프로그래머 포트폴리오입니다.">
+    <meta name="keywords" content="게임 프로그래머, C++, Unreal Engine, 게임 시스템, 네트워크, DirectX 12, 포트폴리오">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Minsu Seo | Rendering Intern Portfolio</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <title>서민수 | 게임 프로그래머 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;family=Play:wght@400;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -20,30 +16,26 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/portfolio-game.css" type="text/css">
 </head>
 
 <body data-spy="scroll" data-target=".header__nav__menu" data-offset="100">
-    <div id="preloder">
+    <div id="preloder" aria-hidden="true">
         <div class="loader"></div>
     </div>
 
     <header class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
-                </div>
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="header__nav__option">
-                        <nav class="header__nav__menu mobile-menu">
+                        <nav class="header__nav__menu mobile-menu" aria-label="주요 메뉴">
                             <ul>
-                                <li class="nav-item active"><a href="#home"><span
-                                            data-lang-key="nav_home">Home</span></a></li>
-                                <li class="nav-item"><a href="#portfolio"><span
-                                            data-lang-key="nav_portfolio">Portfolio</span></a></li>
-                                <li><a href="https://github.com/WestMinsu" target="_blank"><span><i
-                                                class="fa fa-github"></i></span></a></li>
-                                <li class="lang-menu active" id="lang-menu-ko"><a href="#"><span>KO</span></a></li>
-                                <li class="lang-menu" id="lang-menu-en"><a href="#"><span>EN</span></a></li>
+                                <li class="nav-item active"><a href="#home"><span data-lang-key="nav_home">홈</span></a></li>
+                                <li class="nav-item"><a href="#portfolio"><span data-lang-key="nav_portfolio">프로젝트</span></a></li>
+                                <li><a href="https://github.com/WestMinsu" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필 열기"><span><i class="fa fa-github" aria-hidden="true"></i></span></a></li>
+                                <li class="lang-menu active" id="lang-menu-ko"><a href="#" lang="ko"><span>KO</span></a></li>
+                                <li class="lang-menu" id="lang-menu-en"><a href="#" lang="en"><span>EN</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -52,200 +44,197 @@
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <section class="hero" id="home">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="img/bistro.png">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span data-lang-key="hero_role">Rendering Programmer</span>
-                                <h2 data-lang-key="hero_name">Minsu Seo</h2>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__slider owl-carousel">
+                <div class="hero__item set-bg" data-setbg="img/controller.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="hero__text">
+                                    <span data-lang-key="hero_role">게임 프로그래머</span>
+                                    <h2 data-lang-key="hero_name">서민수</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="portfolio spad" id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title center-title">
-                        <h2 data-lang-key="portfolio_page_title">Featured Projects</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row portfolio__gallery portfolio__gallery--stacked">
+        </section>
 
-                <div class="col-lg-12 col-md-12 col-sm-12 mix rendering cpp">
-                    <div class="portfolio__item portfolio__item--featured portfolio-popup-card"
-                        data-popup-target="#popup-we" role="button" tabindex="0"
-                        aria-label="Open WestEngine details">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/bistro.png">
-                            <a href="#popup-we" class="play-btn popup-with-content"><i class="fa fa-search"></i></a>
-                        </div>
-                        <div class="portfolio__item__description">
-                            <h4 data-lang-key="p_we_title">WestEngine</h4>
-                            <p data-lang-key="p_we_desc">
-                                DirectX 12/Vulkan dual-backend rendering engine with bindless RHI, render graph,
-                                GPU-driven rendering, and deferred PBR.
-                            </p>
-                        </div>
-                        <div class="portfolio__item__text">
-                            <h4 data-lang-key="p_we_title">WestEngine</h4>
-                            <ul>
-                                <li data-lang-key="p_we_tag1">DirectX 12</li>
-                                <li data-lang-key="p_we_tag2">Vulkan</li>
-                                <li data-lang-key="p_we_tag3">C++20 / Slang</li>
-                            </ul>
-                        </div>
-                        <div class="render-focus render-focus--project">
-                            <a href="#popup-we" class="render-focus__item popup-with-content"
-                                aria-label="Open WestEngine details">
-                                <i class="fa fa-sitemap"></i>
-                                <h4 data-lang-key="focus_rhi_title">Unified RHI</h4>
-                                <p data-lang-key="focus_rhi_text">One renderer path over DX12 and Vulkan backends.</p>
-                            </a>
-                            <a href="#popup-we" class="render-focus__item popup-with-content"
-                                aria-label="Open WestEngine details">
-                                <i class="fa fa-database"></i>
-                                <h4 data-lang-key="focus_bindless_title">Bindless</h4>
-                                <p data-lang-key="focus_bindless_text">Resources are accessed by index through one
-                                    global descriptor model.</p>
-                            </a>
-                            <a href="#popup-we" class="render-focus__item popup-with-content"
-                                aria-label="Open WestEngine details">
-                                <i class="fa fa-random"></i>
-                                <h4 data-lang-key="focus_graph_title">Render Graph</h4>
-                                <p data-lang-key="focus_graph_text">Pass intent drives barriers, transitions, and
-                                    aliasing.</p>
-                            </a>
-                            <a href="#popup-we" class="render-focus__item popup-with-content"
-                                aria-label="Open WestEngine details">
-                                <i class="fa fa-microchip"></i>
-                                <h4 data-lang-key="focus_gpu_title">GPU-Driven</h4>
-                                <p data-lang-key="focus_gpu_text">Compute culling feeds indirect draw submission.</p>
-                            </a>
+        <section class="portfolio spad" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title center-title">
+                            <h2 data-lang-key="portfolio_page_title">주요 프로젝트</h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-12 col-md-12 col-sm-12 mix unreal">
-                    <div class="portfolio__item portfolio__item--secondary portfolio-popup-card"
-                        data-popup-target="#popup-ap" role="button" tabindex="0"
-                        aria-label="Open Arsenal details">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arsenal.png">
-                            <a href="#popup-ap" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="portfolio__item__description">
-                            <h4 data-lang-key="p_ap_title">Arsenal</h4>
-                            <p data-lang-key="p_ap_desc">
-                                메카소녀 fps
-                            </p>
-                        </div>
-                        <div class="portfolio__item__text">
-                            <h4 data-lang-key="p_ap_title">Arsenal</h4>
-                            <ul>
-                                <li data-lang-key="p_ap_tag1">Unreal Engine</li>
-                                <li data-lang-key="p_ap_tag2">C++</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12 mix cpp">
-                    <div class="portfolio__item portfolio__item--secondary portfolio-popup-card"
-                        data-popup-target="#popup-ae" role="button" tabindex="0"
-                        aria-label="Open Arcane Edge details">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arcane_edge.png">
-                            <a href="#popup-ae" class="play-btn popup-with-content"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="portfolio__item__description">
-                            <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
-                            <p data-lang-key="p_ae_desc">
-                                C++을 기반으로 제작된 2D 액션 게임입니다. 자체 게임 엔진의 기초를 다지며 객체 지향 프로그래밍의 원칙을 적용했습니다.
-                            </p>
-                        </div>
-                        <div class="portfolio__item__text">
-                            <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
-                            <span data-lang-key="p_ae_tag1">C++ Project</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="services spad">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="services__title text-center">
-                        <div class="section-title">
-                            <div class="section-title center-title">
-                                <h2 data-lang-key="passion_title">Beyond the game</h2>
+                <div class="row portfolio__gallery portfolio__gallery--stacked">
+                    <div class="col-lg-12 col-md-12 col-sm-12 mix unreal cpp">
+                        <article class="portfolio__item portfolio__item--featured portfolio-popup-card"
+                            data-popup-target="#popup-ap" role="button" tabindex="0" aria-label="Arsenal 프로젝트 상세 열기">
+                            <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arsenal.png">
+                                <a href="#popup-ap" class="play-btn popup-with-content" aria-label="Arsenal 상세 열기"><i class="fa fa-search" aria-hidden="true"></i></a>
                             </div>
-                            <p data-lang-key="passion_text">게임은 단순한 시간 때우기용 매체가 아니라 영화나 드라마 이상의
-                                감동과 즐거움을 선사할 수 있는 매력적인 매체입니다. 이에 따라 게임 그래픽 렌더링 기술에
-                                많은 관심을 가지고 있으며, 실시간 렌더링 파이프라인과 GPU 기반 최적화를 직접 구현하며
-                                역량을 쌓고 있습니다. 고급 렌더링 기법을 활용하여 현실감 넘치는 배경과 캐릭터를 구현하고,
-                                화려한 그래픽 효과를 통해 시각적으로 매력적인 게임을 만들어보고 싶습니다.</p>
+                            <div class="portfolio__item__description">
+                                <h4 data-lang-key="p_ap_title">Arsenal</h4>
+                                <p data-lang-key="p_ap_desc">언리얼 엔진 5를 사용하여 개발한 메카 소녀 FPS 게임입니다. 게임 시작 전 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.</p>
+                            </div>
+                            <div class="portfolio__item__text">
+                                <h4 data-lang-key="p_ap_title">Arsenal</h4>
+                                <ul>
+                                    <li data-lang-key="p_ap_tag1">Unreal Engine</li>
+                                    <li data-lang-key="p_ap_tag2">C++</li>
+                                </ul>
+                                <p class="project-summary" data-lang-key="p_ap_desc">언리얼 엔진 5를 사용하여 개발한 메카 소녀 FPS 게임입니다. 게임 시작 전 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 mix cpp">
+                        <article class="portfolio__item portfolio__item--secondary portfolio-popup-card"
+                            data-popup-target="#popup-ae" role="button" tabindex="0" aria-label="Arcane Edge 프로젝트 상세 열기">
+                            <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/arcane_edge.png">
+                                <a href="#popup-ae" class="play-btn popup-with-content" aria-label="Arcane Edge 상세 열기"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="portfolio__item__description">
+                                <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
+                                <p data-lang-key="p_ae_desc">적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.</p>
+                            </div>
+                            <div class="portfolio__item__text">
+                                <h4 data-lang-key="p_ae_title">Arcane Edge</h4>
+                                <span data-lang-key="p_ae_tag1">C++ Project</span>
+                                <p class="project-summary" data-lang-key="p_ae_desc">적의 속성에 맞춰 무기를 교체하며 싸우는 C++ 기반의 2D 횡스크롤 런앤건 게임입니다.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 mix rendering cpp">
+                        <article class="portfolio__item portfolio__item--secondary portfolio-popup-card"
+                            data-popup-target="#popup-dxr" role="button" tabindex="0" aria-label="DXR Path Tracer 프로젝트 상세 열기">
+                            <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/dxrpathtracer.png">
+                                <a href="#popup-dxr" class="play-btn popup-with-content" aria-label="DXR Path Tracer 상세 열기"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="portfolio__item__description">
+                                <h4 data-lang-key="p_dxr_title">DXR Path Tracer</h4>
+                                <p data-lang-key="p_dxr_desc">DirectX 12와 DirectX Raytracing(DXR)을 이용해 구현한 실시간 Path Tracer 프로젝트입니다.</p>
+                            </div>
+                            <div class="portfolio__item__text">
+                                <h4 data-lang-key="p_dxr_title">DXR Path Tracer</h4>
+                                <ul>
+                                    <li data-lang-key="p_dxr_tag1">C++</li>
+                                    <li data-lang-key="p_dxr_tag2">DirectX 12 / DXR</li>
+                                    <li data-lang-key="p_dxr_tag3">HLSL</li>
+                                </ul>
+                                <p class="project-summary" data-lang-key="p_dxr_desc">DirectX 12와 DirectX Raytracing(DXR)을 이용해 구현한 실시간 Path Tracer 프로젝트입니다.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 mix rendering cpp">
+                        <article class="portfolio__item portfolio__item--secondary portfolio-popup-card"
+                            data-popup-target="#popup-we" role="button" tabindex="0" aria-label="WestEngine 프로젝트 상세 열기">
+                            <div class="portfolio__item__video set-bg" data-setbg="img/bistro.png">
+                                <a href="#popup-we" class="play-btn popup-with-content" aria-label="WestEngine 상세 열기"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="portfolio__item__description">
+                                <h4 data-lang-key="p_we_title">WestEngine</h4>
+                                <p data-lang-key="p_we_desc">DirectX 12/Vulkan 듀얼 백엔드 RHI, Bindless 리소스 모델, Render Graph, GPU-driven 렌더링, Deferred PBR 파이프라인을 구현한 렌더링 엔진입니다.</p>
+                            </div>
+                            <div class="portfolio__item__text">
+                                <h4 data-lang-key="p_we_title">WestEngine</h4>
+                                <ul>
+                                    <li data-lang-key="p_we_tag1">DirectX 12</li>
+                                    <li data-lang-key="p_we_tag2">Vulkan</li>
+                                    <li data-lang-key="p_we_tag3">C++ / Slang</li>
+                                </ul>
+                                <p class="project-summary" data-lang-key="p_we_desc">DirectX 12/Vulkan 듀얼 백엔드 RHI, Bindless 리소스 모델, Render Graph, GPU-driven 렌더링, Deferred PBR 파이프라인을 구현한 렌더링 엔진입니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services spad">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="services__title text-center">
+                            <div class="section-title">
+                                <div class="section-title center-title">
+                                    <h2 data-lang-key="passion_title">Beyond the game</h2>
+                                </div>
+                                <p data-lang-key="passion_text">게임은 단순한 시간 때우기용 매체가 아닙니다. 플레이어의 선택과 상호작용을 통해 영화나 드라마 이상의 감동과 즐거움을 선사할 수 있는 매력적인 매체입니다.<br><br>C++과 Unreal Engine을 활용해 여러 게임 프로젝트를 진행했고, DirectX 12 · Vulkan 기반 렌더링 엔진과 DXR Path Tracer도 직접 구현하며 엔진 구조에 대한 이해도 넓혔습니다. 게임의 기능을 구현하는 데 그치지 않고, 그 기능이 어떤 구조에서 동작하는지 이해하고 성능까지 개선할 수 있는 게임 프로그래머가 되고자 합니다. 궁극적으로는 이러한 기술적 이해를 바탕으로 플레이어가 오랫동안 지내고 싶은 게임 속 세상을 만들고 싶습니다.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <div id="popup-we" class="mfp-hide white-popup-block white-popup-block--wide">
-        <h2 data-lang-key="p_we_title">WestEngine</h2>
-        <p data-lang-key="p_we_period">Development period: 2026-02-28 ~ 2026-04-27</p>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/c6qrl-4vMc0" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <img class="popup-image" src="img/bistro.png" alt="WestEngine Bistro scene">
-        <div class="popup-detail" data-lang-key="p_we_detail_desc">
-            <p>DirectX 12/Vulkan dual-backend rendering engine with a bindless RHI, render graph, GPU-driven rendering,
-                and deferred PBR pipeline.</p>
-        </div>
-    </div>
-
-    <div id="popup-ap" class="mfp-hide white-popup-block">
+    <div id="popup-ap" class="mfp-hide white-popup-block white-popup-block--wide">
         <h2 data-lang-key="p_ap_title">Arsenal</h2>
-        <p data-lang-key="p_ap_period">Development period: 2025-08-25 ~ 2025-12-22</p>
+        <p class="popup-period" data-lang-key="p_ap_period">개발 기간: 2025-08-25 ~ 2025-12-22</p>
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/H7mY3IWkGmY" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/H7mY3IWkGmY" title="Arsenal 프로젝트 영상" loading="lazy" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="popup-detail" data-lang-key="p_ap_detail_desc">
-            [Arsenal Project에 대한 자세한 설명을 여기에 작성합니다.]
+            <p>메카 소녀 FPS 게임입니다. 게임 시작 전 무기, 방어구, 장비 등으로 캐릭터의 Layout을 상세하게 설정하고, 캐릭터 사망 시 해당 Layout의 총 가치가 상대방의 점수가 되는 독특한 시스템을 가지고 있습니다.</p>
         </div>
     </div>
 
     <div id="popup-ae" class="mfp-hide white-popup-block">
         <h2 data-lang-key="p_ae_title">Arcane Edge</h2>
-        <p data-lang-key="p_ae_period">Development period: 2025-06-09 ~ 2025-07-18</p>
+        <p class="popup-period" data-lang-key="p_ae_period">개발 기간: 2025-06-09 ~ 2025-07-18</p>
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/zFD2J6oJhNU" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/zFD2J6oJhNU" title="Arcane Edge 프로젝트 영상" loading="lazy" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="popup-detail" data-lang-key="p_ae_detail_desc">
-            [Arcane Edge에 대한 자세한 설명을 여기에 작성합니다.]
+            <p>적의 속성에 따라 무기를 변경하며 스테이지를 돌파하는 2D 횡스크롤 런앤건 게임입니다.</p>
         </div>
     </div>
+
+    <div id="popup-dxr" class="mfp-hide white-popup-block white-popup-block--wide">
+        <h2 data-lang-key="p_dxr_title">DXR Path Tracer</h2>
+        <p class="popup-period" data-lang-key="p_dxr_period">개발 기간: 2026-07-02 ~ 2026-08-20</p>
+        <img class="popup-image popup-image--cover" src="img/portfolio/dxrpathtracer.png" alt="DXR Path Tracer 렌더링 장면">
+        <div class="popup-detail" data-lang-key="p_dxr_detail_desc">
+            <p>DirectX 12와 DirectX Raytracing(DXR)을 이용해 구현한 실시간 Path Tracer 프로젝트입니다.</p>
+        </div>
+    </div>
+
+    <div id="popup-we" class="mfp-hide white-popup-block white-popup-block--wide">
+        <h2 data-lang-key="p_we_title">WestEngine</h2>
+        <p class="popup-period" data-lang-key="p_we_period">개발 기간: 2026-02-28 ~ 2026-04-27</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/c6qrl-4vMc0" title="WestEngine 프로젝트 영상" loading="lazy" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <img class="popup-image" src="img/bistro.png" alt="WestEngine Bistro 장면">
+        <div class="popup-detail" data-lang-key="p_we_detail_desc">
+            <p>DirectX 12/Vulkan 듀얼 백엔드 렌더링 엔진입니다.</p>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-7 col-md-6">
                         <div class="footer__top__social">
-                            <a href="https://github.com/WestMinsu"><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/WestMinsu" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필 열기"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
